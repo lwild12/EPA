@@ -1,0 +1,9 @@
+scapy
+pefile
+yara-python
+pandas
+numpy
+scikit-learn
+matplotlib
+tabulate
+pytest

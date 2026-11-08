@@ -1,0 +1,16 @@
+__pycache__/
+.pytest_cache/
+*.pyc
+*.db
+*.sqlite
+*.pcap
+packets.csv
+analysis_out/
+private_uploads/
+# compiled C demos
+ex4-defensive/c-debug/memory_bugs
+ex4-defensive/c-debug/memory_bugs_fixed
+ex4-defensive/c-debug/memory_bugs_asan
+ex4-defensive/c-debug/race
+ex4-defensive/c-debug/race_fixed
+ex4-defensive/c-debug/race_tsan
