@@ -2,6 +2,8 @@
 
 Practice scripts and templates for the four practical exercises. Scripts are for use in your own lab/exam VM only.
 
+Start with **GUIDE.md** (what to do on the day). Each exercise folder has its own README with exact steps.
+
 ## Layout
 
 | Folder | Exercise | Main files |
