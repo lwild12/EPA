@@ -60,3 +60,20 @@ Use the scaffold in `templates/justification_and_grading.md` and paste your brie
 
 ## Honest limits of this kit
 Snort rules and the MIPS programs were not tested in real Snort or MARS/SPIM. Valgrind needs Linux. The templates are starting points; marks come from your reasoning on the brief's scenario.
+
+## Worked example paragraphs (practice data only: replace with your own evidence)
+These show the five-part shape. Do not paste them; your marker needs your scenario and your figures.
+
+**Ex1 design:** "I segmented students onto VLAN 20 and applied an inbound ACL (Figure 4) that permits only HTTPS and DNS to named servers and logs everything else to the server VLAN. This addresses the brief's requirement that students must not reach staff systems, and limits lateral movement if a student device is compromised. `show access-lists` (Figure 5) shows the deny rule matching during a test ping. I considered a firewall appliance but rejected it because the brief gives no budget for one and a router ACL meets the requirement. The residual risk is that an ACL is stateless for return traffic, so I would add zone-based filtering in a larger network."
+
+**Ex2 malware:** "Static triage (Figure 7) showed a high-entropy `.data` section, few imports and a writable and executable section, which suggests packing. The imports of `VirtualAllocEx` and `WriteProcessMemory` map to process injection (T1055), but imports show capability, not use. The sandbox run (Figure 9) confirmed a remote thread in `explorer.exe`, so I rate the injection finding as confirmed. I wrote a YARA rule on the two API names and a section name; it matched the sample and not a clean binary (Figure 10). It could be evaded by dynamic API resolution, so I would pair it with behaviour-based detection."
+
+**Ex3 monitoring:** "A SYN-count query (Figure 12) showed one source sending SYNs to 400 distinct ports on one host in under a minute, which is a port scan. A second query showed the same source making 61 connections to port 22, consistent with brute force. Z-score analysis flagged the source as 3.4 standard deviations above the mean for port diversity. I scored the risk 16 (likelihood 4, impact 4) and recommend rate limiting and key-only SSH. The busiest internal host also appears as an outlier because it is the server; I excluded it as expected behaviour, which shows why a baseline is needed."
+
+**Ex4 code:** "The vulnerable `read_file` accepted `../secret.txt` and returned a file outside the public directory (test output, Figure 14). I fixed it by resolving the real path and rejecting any path not inside the base directory. The test now raises a permission error and the normal file still loads (Figure 15). An allow-list of filenames would be stricter, but the application needs dynamic names, so I chose path resolution. Symlinks inside the base directory could still point outside; `realpath` handles that, and I would also run the service with a read-only mount."
+
+## Final check before you submit
+1. Did you answer every verb you highlighted?
+2. Does each claim have a figure number?
+3. Did you say where something is adapted from a public repo?
+4. Is anything you could not run clearly stated as not run?
