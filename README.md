@@ -14,6 +14,8 @@ Start with **GUIDE.md** (what to do on the day). Each exercise folder has its ow
 | `ex4-defensive/` | Defensive code | `python/`, `c-debug/`, `mips/` |
 | `templates/` | Write-up aids | justification, risk register, IR plan, key mgmt, ISMS, STRIDE, assurance, OSINT, UK law |
 
+Writing the Ex1 justification? Start from `templates/ex1_justification_draft.md` (about 1,000 words, fill in the brackets).
+
 ## Quick start
 
 ```
