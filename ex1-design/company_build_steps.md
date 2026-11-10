@@ -1,4 +1,4 @@
-# CareLink network: step-by-step build (Packet Tracer)
+# `<COMPANY>` network: step-by-step build (Packet Tracer)
 
 One step at a time. Each step ends with a **Check**. Do not move on until the check passes.
 All addresses are PLACEHOLDERS. If your brief gives addressing or VLANs, use those instead.
@@ -8,7 +8,7 @@ All addresses are PLACEHOLDERS. If your brief gives addressing or VLANs, use tho
 ```
 [Cell tower]--[Central Office Server]         (ISP side)
                     |
-                 ISP-R1 g0/0 ---- g0/0 CARELINK-CORE g0/1 (trunk) ---- g0/1 SW1 (access ports)
+                 ISP-R1 g0/0 ---- g0/0 <COMPANY>-CORE g0/1 (trunk) ---- g0/1 SW1 (access ports)
               203.0.113.1/30   203.0.113.2/30                              |
                                                                   PCs / laptops / servers
 ```
@@ -17,7 +17,7 @@ All addresses are PLACEHOLDERS. If your brief gives addressing or VLANs, use tho
 |---|---|---|---|---|
 | 10 | STAFF | 10.10.10.0/24 | 10.10.10.1 | Office laptops |
 | 20 | CLINICAL | 10.10.20.0/24 | 10.10.20.1 | Mobile / care staff devices |
-| 30 | SERVERS | 10.10.30.0/24 | 10.10.30.1 | CareLink app / API servers |
+| 30 | SERVERS | 10.10.30.0/24 | 10.10.30.1 | `<COMPANY>` app / API servers |
 | 40 | GUEST | 10.10.40.0/24 | 10.10.40.1 | Visitors, no internal access |
 | 99 | MGMT | 10.10.99.0/24 | 10.10.99.1 | Admin access to devices |
 
@@ -54,7 +54,7 @@ Check: `show vlan brief` lists all five.
 
 ```
 interface g0/1
- description Trunk to CARELINK-CORE
+ description Trunk to <COMPANY>-CORE
  switchport mode trunk
  switchport trunk allowed vlan 10,20,30,40,99
  switchport nonegotiate
@@ -124,14 +124,14 @@ exit
 
 ---
 
-## Part B: Core router (CARELINK-CORE)
+## Part B: Core router (`<COMPANY>-CORE`)
 
 **B1. Name it and bring up the ISP link.**
 
 ```
 enable
 configure terminal
-hostname CARELINK-CORE
+hostname <COMPANY>-CORE
 interface g0/0
  description Link to ISP-R1
  ip address 203.0.113.2 255.255.255.252
@@ -311,7 +311,7 @@ no ip http server
 no ip http secure-server
 service password-encryption
 enable secret <STRONG-SECRET>
-ip domain-name carelink.local
+ip domain-name <COMPANY>.local
 username admin secret <STRONG-SECRET>
 crypto key generate rsa modulus 2048
 ip ssh version 2

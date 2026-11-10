@@ -1,4 +1,4 @@
-# Packet Tracer setup: ISP / cell tower + CareLink core router
+# Packet Tracer setup: ISP / cell tower + `<COMPANY>` core router
 
 Small steps. Do them in order. Tick each one before moving on.
 Addresses below are PLACEHOLDERS. Use the addressing from your brief if it gives any.
@@ -17,14 +17,14 @@ Write this table before touching a device.
 
 | Link | Side A (device / port / IP) | Side B (device / port / IP) | Subnet |
 |---|---|---|---|
-| CareLink core to ISP router | CARELINK-CORE g0/0 / 203.0.113.2 | ISP-R1 g0/0 / 203.0.113.1 | 203.0.113.0/30 |
+| `<COMPANY>` core to ISP router | `<COMPANY>-CORE` g0/0 / 203.0.113.2 | ISP-R1 g0/0 / 203.0.113.1 | 203.0.113.0/30 |
 | ISP to cell tower side | ISP-R1 g0/1 / (per your setup) | cell tower / central office server | (per your setup) |
 
 203.0.113.0/24 is a documentation range, which is safe for a lab. A /30 gives exactly two usable addresses, ideal for a router-to-router link.
 
 ## 2. Build the physical links
 
-1. Place the CareLink core router and the ISP router.
+1. Place the `<COMPANY>` core router and the ISP router.
 2. Connect them: **crossover** cable, one free port on each. Note the port names.
 3. Wait 10 to 20 seconds. Look at the link dots:
    - **Red** = port shut down, wrong cable, or no power. Go to section 5.
@@ -33,12 +33,12 @@ Write this table before touching a device.
 
 ## 3. Configure the link (both routers)
 
-CareLink core:
+`<COMPANY>` core:
 
 ```
 enable
 configure terminal
-hostname CARELINK-CORE
+hostname <COMPANY>-CORE
 interface g0/0
  description Link to ISP-R1
  ip address 203.0.113.2 255.255.255.252
@@ -53,7 +53,7 @@ enable
 configure terminal
 hostname ISP-R1
 interface g0/0
- description Link to CARELINK-CORE
+ description Link to <COMPANY>-CORE
  ip address 203.0.113.1 255.255.255.252
  no shutdown
 exit
@@ -63,7 +63,7 @@ Check from each router:
 
 ```
 show ip interface brief
-ping 203.0.113.1      (from CareLink)
+ping 203.0.113.1      (from <COMPANY>)
 ping 203.0.113.2      (from ISP)
 ```
 
@@ -71,26 +71,26 @@ Both interfaces must say `up / up`. If the first ping drops one reply, that is n
 
 ## 4. Routing so traffic goes through the ISP
 
-CareLink core: send unknown traffic to the ISP.
+`<COMPANY>` core: send unknown traffic to the ISP.
 
 ```
 ip route 0.0.0.0 0.0.0.0 203.0.113.1
 ```
 
-ISP router: needs a route BACK to CareLink's internal networks.
+ISP router: needs a route BACK to `<COMPANY>`'s internal networks.
 
 ```
-ip route <CARELINK-LAN-NETWORK> <MASK> 203.0.113.2
+ip route <COMPANY-LAN-NETWORK> <MASK> 203.0.113.2
 ```
 
-Or, if the ISP should not know CareLink's private ranges, do NAT on the CareLink core instead:
+Or, if the ISP should not know `<COMPANY>`'s private ranges, do NAT on the `<COMPANY>` core instead:
 
 ```
 interface g0/0
  ip nat outside
 interface <LAN-INTERFACE>
  ip nat inside
-access-list 1 permit <CARELINK-LAN-NETWORK> <WILDCARD>
+access-list 1 permit <COMPANY-LAN-NETWORK> <WILDCARD>
 ip nat inside source list 1 interface g0/0 overload
 ```
 
@@ -107,7 +107,7 @@ Rule of thumb: a one-way route is the most common reason pings reach the ISP but
    - `show running-config interface g0/0` on both routers.
 3. **Ping works between routers but not from PCs?**
    - PC default gateway set to the router's LAN interface IP?
-   - Default route on CareLink core present? `show ip route` should show `S*`.
+   - Default route on `<COMPANY>` core present? `show ip route` should show `S*`.
    - ISP has a route back (or NAT is in place)?
 4. **Ping works only one way?**
    - Missing return route on the far router.
@@ -150,8 +150,8 @@ For each requirement, keep one screenshot and one line saying what it proves.
 
 - [ ] `show ip interface brief` on both routers (links up)
 - [ ] Ping between the two router link IPs
-- [ ] `show ip route` on CareLink core showing the default route
-- [ ] Ping from a CareLink PC to an ISP-side host
+- [ ] `show ip route` on `<COMPANY>` core showing the default route
+- [ ] Ping from a `<COMPANY>` PC to an ISP-side host
 - [ ] `show cdp neighbors` showing the router-to-router connection
 - [ ] Failover test (if the brief requires it): shut the primary link, show traffic using the backup
 
