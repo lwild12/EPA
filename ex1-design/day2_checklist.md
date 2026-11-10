@@ -1,6 +1,6 @@
 # Ex1 Day 2: keep-on-track sheet
 
-Repo: **github.com/lwild12/EPA**, folder `ex1-design/`. Full detail is in `build_guide_and_day2_plan.md`. This sheet only keeps you on time.
+Full detail is in the repo, folder `ex1-design/`, in `build_guide_and_day2_plan.md`. This sheet only keeps you on time.
 
 **Rules**
 
