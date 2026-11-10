@@ -9,7 +9,6 @@ Part A rebuilds your `<COMPANY>` network changes in 10 ordered steps. Part B cov
 **Ground rules**
 
 - Do Part A on your copy tonight. Tomorrow, rebuild on the real file.
-- Before you bring this guide into the room, ask your assessor if that is allowed. If not, make your own short notes tonight instead.
 - Use made-up lab passwords. Never reuse a real one.
 - Do the steps in order. Step 1 comes first so you cannot lock yourself out.
 - `<angle brackets>` mean: replace with your own value.
@@ -822,11 +821,6 @@ The sheet asks for a written justification of your approach: 1,000 words, plus o
 5. Refer to your evidence by name, such as "test table row 7", so a marker can find it.
 6. Check the count in Word under Review, then Word Count.
 
-**Ask the assessor**
-
-- Do headings, tables and captions count towards the word limit?
-- Where does the document get saved, and in what format?
-
 ## Part B: running order for Day 2
 
 The sheet says every highlighted topic must be attempted. So aim for a basic attempt with some evidence on all eight first, then improve where time allows.
@@ -834,17 +828,8 @@ The sheet says every highlighted topic must be attempted. So aim for a basic att
 **Tonight**
 
 - [ ] Do Part A on your copy only. Do not submit that file.
-- [ ] Read Part B once, but do not build it at home yet. Ask the assessor first whether work done outside the room can count.
-- [ ] Write your questions for the assessor (below).
+- [ ] Read Part B once. Work on copies out of hours is allowed, but never submit those copies.
 - [ ] Charge your laptop and check you have the tools the sheet lists.
-
-**Questions for the assessor before you start**
-
-- [ ] Can I bring this guide or my own notes into the room?
-- [ ] How long is Day 2, and when must the work be handed in?
-- [ ] Do headings and tables count in the 1,000 words?
-- [ ] Which operating system images are available for the OS topic?
-- [ ] Where do I save work, and in which formats?
 
 **Order for Day 2**
 
