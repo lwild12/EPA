@@ -2,7 +2,7 @@
 
 Practice scripts and templates for the four practical exercises. Scripts are for use in your own lab/exam VM only.
 
-Start with **GUIDE.md** (what to do on the day). Each exercise folder has its own README with exact steps.
+Start with **GUIDE.md** (what to do on the day). Working on Ex2? Open **EX2_START_HERE.md**. Each exercise folder has its own README with exact steps.
 
 ## Layout
 
@@ -11,6 +11,7 @@ Start with **GUIDE.md** (what to do on the day). Each exercise folder has its ow
 | `ex1-design/` | Network and web design | `vlsm_calc.py`, `cisco_hardening.md`, `linux_audit.sh`, `php-upload/` |
 | `ex2-malware/` | Malware testing | `triage.py`, `rules/*.yar`, `SAMPLE_OPTIONS.md` |
 | `ex2-autopsy/` | Forensics evidence (M57-Jean) | `README.md` |
+| `ex2-checklists/` | Ex2 small-step checklists | `00` to `05`, plus `EX2_START_HERE.md` at the top level |
 | `ex3-monitor/` | Traffic monitoring | `gen_practice_pcap.py`, `pcap_to_sqlite.py`, `queries.sql`, `analysis.py`, `local.rules` |
 | `ex4-defensive/` | Defensive code | `python/`, `c-debug/`, `mips/` |
 | `templates/` | Write-up aids | justification, risk register, IR plan, key mgmt, ISMS, STRIDE, assurance, OSINT, UK law |
