@@ -23,8 +23,6 @@ Today: **A. Malware** and **B. Threats and attacks**. Tomorrow: Autopsy, assuran
 | 9 Malware | Analyse malware, identify its mechanisms | Malware with **obfuscation and anti-reverse-engineering** | **Script or compose custom tool sets** for complex malware |
 | 12 Threats | Research and test attacks in a lab, combine sources into an enriched view | Threats to the **system, services and processes** | **Devise mitigations** for all of those |
 
-<div class="pb"></div>
-
 ## 1. Start of day
 
 **Folders and notes**
@@ -59,8 +57,6 @@ Write this on the first page of `notes/` (it is part of the legal and ethics top
 - ☐ Open Nessus (`https://localhost:8834`). Start the activation or plugin setup now. Come back to it in B3.
 - ☐ Get the **sample** (if not done already): log in to VirusShare in the lab VM only, download your chosen file. Never on a work laptop.
 - ☐ Get the **M57-Jean image** for tomorrow. Record its SHA-256 (`Get-FileHash -Algorithm SHA256 <file>`). Do not open it today.
-
-<div class="pb"></div>
 
 ## 2. A. Malware
 
@@ -155,8 +151,6 @@ Plan before you click. Free sandbox time is short.
 - ☐ For each one seen: **how you got past it** (read behaviour in the sandbox after unpacking, dumped memory, waited out a sleep, found the decoded strings).
 - ☐ Be ready to say in two lines each: the machine-level view (what the instructions do), what reverse engineering means here, what de-obfuscation means, and how anti-debugging works.
 - ☐ **DISTINCTION (only if time):** script or compose your own tool set. Make a small, visible change to `triage.py` (for example, a check for VM-detection strings) or chain tools into one run. Write down exactly what you changed. Say plainly that the base tool is pre-written.
-
-<div class="pb"></div>
 
 ## Break
 
@@ -304,8 +298,6 @@ Merit means threats to the system **including services and processes**, not just
   - ☐ Supplier access just-in-time, logged, with a named owner and contract clause
   - ☐ Leaver checklist that revokes tokens and wipes the device on day one
   - ☐ Phishing reporting route and short staff training
-
-<div class="pb"></div>
 
 ## 7. Tidy, evidence log, upload
 
