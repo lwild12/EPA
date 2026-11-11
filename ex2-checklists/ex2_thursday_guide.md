@@ -10,10 +10,6 @@ Today: **A. Malware** and **B. Threats and attacks**. Tomorrow: Autopsy, assuran
 - If screenshots are requested: **maximum 5 pages of A4**. Crop tightly.
 - At the end of each test day, all work must be saved and uploaded as instructed. **Submission is final and cannot be reloaded or amended.**
 
-**Settle this BEFORE you start (your call):**
-
-- ☐ Ask your assessor whether printed notes prepared with AI help count as acceptable "notes", and whether you may download the sample and the M57-Jean image ahead of time. If not, do both in "Start of day".
-
 **If you feel stuck (2 minutes):**
 
 1. Stand up, drink water, look away from the screen.
