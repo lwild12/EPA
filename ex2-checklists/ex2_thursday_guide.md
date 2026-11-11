@@ -3,10 +3,16 @@
 One small step at a time. Do the step, tick it, move on. Do not read ahead.
 Today: **A. Malware** and **B. Threats and attacks**. Tomorrow: Autopsy, assurance, legal, justification.
 
-**Two things to settle BEFORE you start (not covered by me, your call):**
+**Rules from the older v4 example pack. Check each against your live brief.**
 
-- ☐ **Asking for help during the day.** You quoted a rule on 10 Nov: "no personal communication and/or on-line asynchronous interaction permitted". Check with your assessor that it does not cover asking an AI assistant. Assume it does. This guide is written to be used on its own.
-- ☐ **Sample and evidence ahead of time.** Ask whether you may download the malware sample and the M57-Jean image before the day. If not, do it in "Start of day".
+- Open book: notes, books and the internet are allowed, **but "no personal communication and or on-line asynchronous interaction permitted"**. It is an individual test. Do not message anyone, and do not use an AI chat, during test hours. This guide is written to be used on its own.
+- Tests run **09:30 to 16:00**. Active time is 6 hours. Take **one 30-minute break** and **email your supervisor when it starts and when it ends**.
+- If screenshots are requested: **maximum 5 pages of A4**. Crop tightly.
+- At the end of each test day, all work must be saved and uploaded as instructed. **Submission is final and cannot be reloaded or amended.**
+
+**Settle this BEFORE you start (your call):**
+
+- ☐ Ask your assessor whether printed notes prepared with AI help count as acceptable "notes", and whether you may download the sample and the M57-Jean image ahead of time. If not, do both in "Start of day".
 
 **If you feel stuck (2 minutes):**
 
@@ -16,24 +22,29 @@ Today: **A. Malware** and **B. Threats and attacks**. Tomorrow: Autopsy, assuran
 
 **Time rule:** when a box runs out, stop where you are, tick "partly done", move on. A rough answer for every topic beats a perfect answer for half of them.
 
-**Targets:** pass every criterion first. Then justify and compare (Merit). Extras last. Your Notion page says items 9 (malware) and 12 (threats) decide the grade, so their extras matter if time allows. Check the wording in your brief.
+**What Merit needs (v4 Annex 1; the live brief points to supplementary tables, so check those):** every pass criterion, plus Merit on items **9 and 12**. So the steps marked **MERIT** below are not optional if you want Merit.
 
-## Schedule (6 hours, T+ = time since you started)
+| Item | Pass | Merit | Distinction |
+| --- | --- | --- | --- |
+| 9 Malware | Analyse malware, identify its mechanisms | Malware with **obfuscation and anti-reverse-engineering** | **Script or compose custom tool sets** for complex malware |
+| 12 Threats | Research and test attacks in a lab, combine sources into an enriched view | Threats to the **system, services and processes** | **Devise mitigations** for all of those |
 
-| # | Block | Mins | T+ | Clock | Done |
-| --- | --- | --- | --- | --- | --- |
-| 1 | Start of day: setup, brief, rules of engagement | 30 | 0:30 | ____ | ☐ |
-| 2 | A. Malware (steps A1 to A5) | 115 | 2:25 | ____ | ☐ |
-|   | **Break** | 10 | 2:35 | ____ | ☐ |
-| 3 | B1. Intel | 25 | 3:00 | ____ | ☐ |
-| 4 | B2. Threat model | 30 | 3:30 | ____ | ☐ |
-| 5 | B3. Scans | 40 | 4:10 | ____ | ☐ |
-|   | **Break** | 10 | 4:20 | ____ | ☐ |
-| 6 | B4. Attack your own app | 40 | 5:00 | ____ | ☐ |
-| 7 | Tidy, evidence log, upload | 50 | 5:50 | ____ | ☐ |
-| 8 | Buffer or extras (items 9 and 12) | 10 | 6:00 | ____ | ☐ |
+## Schedule (09:30 to 16:00, 6 hours active). Slide the clock if you start late.
 
-If you are 15 minutes over anywhere, use the **cut list** on the last page.
+| # | Block | Mins | Clock | Done |
+| --- | --- | --- | --- | --- |
+| 1 | Start of day: setup, brief, rules of engagement | 30 | 09:30 to 10:00 | ☐ |
+| 2 | A. Malware (A1 to A6, includes MERIT) | 120 | 10:00 to 12:00 | ☐ |
+|   | **Break. Email supervisor at start and at end** | 30 | 12:00 to 12:30 | ☐ |
+| 3 | B1. Intel | 25 | 12:30 to 12:55 | ☐ |
+| 4 | B2. Threat model | 25 | 12:55 to 13:20 | ☐ |
+| 5 | B3. Scans | 40 | 13:20 to 14:00 | ☐ |
+| 6 | B4. Attack your own app | 40 | 14:00 to 14:40 | ☐ |
+| 7 | B5. MERIT: services and processes | 15 | 14:40 to 14:55 | ☐ |
+| 8 | Tidy, evidence log, upload | 50 | 14:55 to 15:45 | ☐ |
+| 9 | Buffer | 15 | 15:45 to 16:00 | ☐ |
+
+If you are 15 minutes over anywhere, use the **cut list** on the last page. Never cut the MERIT steps.
 
 <div class="pb"></div>
 
@@ -45,6 +56,7 @@ If you are 15 minutes over anywhere, use the **cut list** on the last page.
 - ☐ Open `notes/evidence_log.txt`. After every step add one line: figure number, what it shows, file name.
 - ☐ Name screenshots in the order you will use them: `fig01_sample_hash.png`, `fig02_triage_report.png`.
 - ☐ Open the Snipping Tool (`Win+Shift+S`).
+- ☐ **Screenshot budget:** max 5 pages of A4 if screenshots are requested. Crop tightly. Keep a running `evidence.docx` of cropped images with captions so you can check the page count as you go. Log the rest in your notes only.
 - ☐ Start a timer. Write the start time on your tracker sheet.
 
 **Read the brief (10 min)**
@@ -74,9 +86,11 @@ Write this on the first page of `notes/` (it is part of the legal and ethics top
 
 <div class="pb"></div>
 
-## 2. A. Malware (115 min)
+## 2. A. Malware (120 min)
 
-**Done when:** you have a verdict, ATT&CK techniques, IOCs, a detection rule, and what CareLink should do.
+**Done when:** you have a verdict, ATT&CK techniques, IOCs, a detection rule, what CareLink should do, and (for Merit) obfuscation and anti-reverse-engineering analysis.
+
+Time inside A: A1 10, A2 30, A3 40, A4 10, A5 20, A6 10.
 
 ### A1. Safe setup (10 min)
 
@@ -111,13 +125,14 @@ The sample is **not run** in this step.
 - ☐ If few imports and high entropy, write: "likely packed, so static view is limited".
 - ☐ Remember: **imports show capability, not proof of use.** Write that sentence in your notes.
 - ☐ Optional if installed: Detect It Easy for packer and entropy, `floss sample.bin` for hidden strings.
+- ☐ **DECISION POINT (Merit).** Does the sample show packing, high entropy, few imports, dynamic API resolution (`GetProcAddress`), or evasion strings? Yes: keep it, this is Merit material. No: swap to a more obfuscated sample now. Budget 10 minutes for the swap, then carry on.
 
-### A3. Dynamic analysis (45 min)
+### A3. Dynamic analysis (40 min)
 
 Plan before you click. Free sandbox time is short.
 
 - ☐ Write your 4 questions: What processes does it start? What files and registry does it change? Where does it connect? Does it persist?
-- ☐ Any.run: new task, upload `sample.bin`, pick a Windows option that suits the file (32 or 64-bit), set a run time (check the free-tier limits on the page).
+- ☐ Any.run is the tool the v4 brief names. Observe the behaviour in the **interactive report** and use it to decide the type and purpose. New task, upload `sample.bin`, pick a Windows option that suits the file (32 or 64-bit), set a run time (check the free-tier limits on the page).
 - ☐ Know that free analyses are, I believe, public. Fine for a public sample. Never upload your own files or evidence.
 - ☐ If Any.run will not run it, use your own CAPEv2 sandbox. Say in the write-up which you used and why.
 - ☐ While it runs, screenshot:
@@ -135,7 +150,7 @@ Plan before you click. Free sandbox time is short.
 - ☐ Write two lines: where they agree, and where they differ and why.
 - ☐ Mark each ATT&CK technique as **confirmed** (seen in sandbox) or **suspected** (only imports or strings).
 
-### A5. Verdict, detection and CareLink actions (25 min)
+### A5. Verdict, detection and CareLink actions (20 min)
 
 - ☐ Verdict in one line: type (stealer, loader, RAT, ransomware), purpose, confidence.
 - ☐ How it gets in (phishing email, malicious download), how it runs, how it persists, how it talks out, how it hides. Use those five headings.
@@ -154,10 +169,16 @@ Plan before you click. Free sandbox time is short.
   - ☐ Warn staff about the delivery route
 - ☐ Revert the VM to `clean`.
 
-### A6. Extras (only after A5, item 9)
+### A6. MERIT: obfuscation and anti-reverse-engineering (10 min)
 
-- ☐ **Obfuscation or evasion:** list what you saw (packing, dynamic API resolution, sleep, debugger or VM checks) and how you got past it (read the unpacked behaviour in the sandbox, dumped memory, waited out a sleep).
-- ☐ **Your own script:** make a small, visible change to `triage.py` (for example, add a check for VM-detection strings). Write down exactly what you changed. Say plainly that the base tool is pre-written.
+- ☐ List what you saw, for each of these, or write "not seen":
+  - ☐ Packing or encryption (entropy, few imports)
+  - ☐ Dynamic API resolution (`LoadLibrary` and `GetProcAddress`)
+  - ☐ Anti-debugging (`IsDebuggerPresent`, timing checks)
+  - ☐ Anti-VM or anti-sandbox (VM strings, long sleeps, nothing happening)
+- ☐ For each one seen: **how you got past it** (read behaviour in the sandbox after unpacking, dumped memory, waited out a sleep, found the decoded strings).
+- ☐ Be ready to say in two lines each: the machine-level view (what the instructions do), what reverse engineering means here, what de-obfuscation means, and how anti-debugging works.
+- ☐ **DISTINCTION (only if time):** script or compose your own tool set. Make a small, visible change to `triage.py` (for example, a check for VM-detection strings) or chain tools into one run. Write down exactly what you changed. Say plainly that the base tool is pre-written.
 
 <div class="pb"></div>
 
@@ -183,9 +204,11 @@ Stand up. Water. Eat something. Do not look at a screen for 5 minutes.
   2. Phishing that steals a sign-in and then a token.
   3. Lost or stolen device holding cached visit notes.
 - ☐ For each: asset, how it happens, impact, which Ex1 control helps.
+- ☐ **Demonstrate collecting intelligence:** show 2 or 3 real searches on public sources (security news, researcher posts, vendor reports). Passive and lawful only: never join, post, buy or log in to a forum. For dark web activity, use published threat-intel reporting, do not visit.
+- ☐ **Enriched view (Pass):** combine at least two sources in one small table: threat | what NCSC says | what CISA KEV or ATT&CK says | what it means for CareLink.
 - ☐ Screenshot or save one real source for each (a CISA entry, an ATT&CK page).
 
-## 4. B2. Threat model (30 min)
+## 4. B2. Threat model (25 min)
 
 **Done when:** one diagram and one STRIDE table.
 
@@ -198,7 +221,7 @@ Stand up. Water. Eat something. Do not look at a screen for 5 minutes.
   - Second entity: **IT admin**, who issues and revokes tokens
 - ☐ Draw dashed lines for **trust boundaries**: device | internet | server | database.
 - ☐ Label each flow with the protocol and the data (token, note).
-- ☐ Fill the STRIDE table. Start from these and edit:
+- ☐ Fill the STRIDE table. The brief says the model must be based on your intelligence, so add a fifth column **Intel**: which B1 source or finding each threat came from. Start from these and edit:
 
 | S/T/R/I/D/E | Threat | Existing control | How you test it |
 | --- | --- | --- | --- |
@@ -291,16 +314,20 @@ Fill the table on your tracker. Use `curl` or Burp Repeater.
 - ☐ Clean up: delete the test rows or restore the database snapshot.
 - ☐ Revert VMs to `clean`.
 
-### B5. Extras (only after B4, item 12)
+### B5. MERIT: threats to services and processes (15 min)
 
-- ☐ Threats to **processes**, not just technology:
+Merit means threats to the system **including services and processes**, not just technology.
+
+- ☐ List threats to **processes**:
   - ☐ Helpdesk password or MFA reset by someone pretending to be staff
   - ☐ Supplier or cloud vendor with admin access
   - ☐ Leavers keeping tokens or devices
-- ☐ A mitigation for each:
+  - ☐ A staff member enabling an attack without knowing it (for example, opening a phish)
+- ☐ **DISTINCTION:** a mitigation for each:
   - ☐ Call-back to a known number plus manager approval before any reset
   - ☐ Supplier access just-in-time, logged, with a named owner and contract clause
   - ☐ Leaver checklist that revokes tokens and wipes the device on day one
+  - ☐ Phishing reporting route and short staff training
 
 <div class="pb"></div>
 
@@ -312,7 +339,8 @@ Fill the table on your tracker. Use `curl` or Burp Repeater.
 - ☐ Copy outputs: triage report, YARA rule, nmap, Nikto, dirb, Nessus export, SQLMap output.
 - ☐ Write 5 bullet notes for each of A and B using the 5 parts: what I did, why, evidence, alternative, remaining risk.
 - ☐ Remove anything that must not be uploaded: the sample, real credentials, tokens.
-- ☐ Check the brief for what must be uploaded each day. Upload what it asks.
+- ☐ Count your screenshot pages: **5 pages of A4 maximum** if screenshots are requested.
+- ☐ Check the brief for what must be uploaded each day. Upload what it asks. **Submission is final.**
 - ☐ Confirm the upload shows as submitted.
 - ☐ Save your work in two places.
 
@@ -324,13 +352,13 @@ Fill the table on your tracker. Use `curl` or Burp Repeater.
 
 ## Cut list (if you are 15 minutes behind, drop in this order)
 
-1. A6 and B5 extras
+1. DISTINCTION parts: the `triage.py` edit in A6 and the mitigations in B5
 2. A2 optional tools (DIE, FLOSS)
 3. B3: skip Nikto or dirb, keep nmap, Burp and Nessus
 4. B4 attack 3: do the first 4 rows only
 5. B2: shorter STRIDE (4 rows)
 
-**Never cut:** one piece of evidence for every highlighted topic, the hashes, and the notes for tomorrow's justification.
+**Never cut:** evidence for every pass criterion, the **MERIT** steps (A6 and B5), the hashes, and the notes for tomorrow's justification.
 
 ## If something breaks
 

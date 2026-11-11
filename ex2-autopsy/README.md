@@ -16,6 +16,16 @@ The scenario is a confidential document leaving a company after a spear-phishing
 - Exact files, formats and sizes on the scenario page. Make sure you have the disk space.
 - The data is synthetic, but still record where it came from and the licence/terms.
 
+## What the older v4 brief asks for in Autopsy
+
+1. **Configure Autopsy** to suit the organisation: set it up for the type of data affected, and so that it meets legal and ethical requirements.
+2. **Preliminary investigation:** find the scope of the breach and what data was affected.
+3. **Create a case** and build a **timeline of events leading up to the breach**.
+4. **Document the investigation** in Autopsy: data collection, analysis and mitigation measures.
+5. Also (legal topic): secure the evidence so it could support legal proceedings.
+
+For CareLink, treat M57-Jean as a breach of confidential data leaving the organisation.
+
 ## Steps (maps to the legal/ethical topic)
 
 1. Download. Record SHA-256 of every file BEFORE opening anything.

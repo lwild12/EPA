@@ -44,12 +44,19 @@ Case study: still CareLink.
 2. Finish the justification. Unfinished work with an honest note beats a missing section.
 3. Only then add extras (items 9 and 12 below).
 
-## What decides the grade
-Your Notion page says items **9 (malware)** and **12 (threats)** decide the grade. Their extras:
-- Item 9: obfuscation / anti-VM / anti-debug and how you saw past it. Your own script (be honest about what is yours).
-- Item 12: threats to processes (helpdesk resets, supplier access) and a mitigation for each.
+## What decides the grade (from the older v4 example pack: check the live brief's supplementary tables)
+Merit = every pass criterion, plus Merit on items 9 and 12 (and others in Ex1 and Ex3).
+- **Item 9 (malware).** Pass: identify mechanisms. **Merit: obfuscation and anti-reverse-engineering.** Distinction: script or compose custom tool sets.
+- **Item 12 (threats).** Pass: lab attacks, combine sources. **Merit: threats to services and processes too.** Distinction: mitigations for those.
 
-Check these against the exact wording in your brief.
+So these are not optional extras if you want Merit.
+
+## Rules from the v4 pack (check the live brief)
+- 09:30 to 16:00, 6 hours active, one 30-minute break. **Email your supervisor at break start and end.**
+- Screenshots: **max 5 pages of A4**. Crop.
+- **No personal communication or asynchronous online interaction. Individual test.**
+- Each day's submission is **final**.
+- Autopsy and the IR plan **are** in Ex2 (v4 lists both). The v11 brief you gave me omits them.
 
 ## Open questions (answer these early)
 - [ ] Which topics are highlighted yellow in your brief? Those are mandatory.

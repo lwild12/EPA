@@ -30,9 +30,18 @@ Use `templates/uk_legal_reference.md`. Name the duty each control or activity su
 - [ ] How malware, credentials and personal data are stored during the work (VM only, no real data).
 
 ## Step 4. Ethics (10 min)
-- [ ] Cite one code: CIISec or BCS.
+- [ ] Cite one recognised professional body's code (BCS or CIISec) and the ethical duties of a cyber security professional.
+- [ ] Say how law applies to **intelligence collection and analysis**: data protection, human rights and privacy.
+- [ ] Say how law applies to testing third parties (ethical hacking, pen testing): authorisation first.
 
 ## Step 5. IR plan (30 min)
+The older v4 brief asks for a **comprehensive** plan covering:
+- [ ] The role and responsibilities of **each team member**.
+- [ ] Procedures for **collecting and analysing data**.
+- [ ] Measures that protect **privacy and confidentiality**.
+- [ ] Legal and ethical requirements for IR: data protection law, privacy, confidentiality and relevant industry standards.
+- [ ] Securing evidence so it could support legal proceedings.
+
 - [ ] Start from `templates/incident_response_plan.md`.
 - [ ] Keep to: roles, severity, the 6 lifecycle steps, evidence handling, notification.
 - [ ] Add the ransomware / infostealer playbook that matches your sample.

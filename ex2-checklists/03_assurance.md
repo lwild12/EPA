@@ -11,7 +11,12 @@ Start from `templates/assurance_strategy.md`. Do not write from scratch.
 - [ ] Test plan: scope, cases, expected result, who, evidence.
 - [ ] Findings: record, assess, fix, retest.
 - [ ] How assurance is kept when the system changes.
+- [ ] Risk assessment plan: likelihood and impact for each threat from B (reuse your scale).
+- [ ] How you will test that each control works.
+- [ ] Incident response procedures (link to your IR plan).
 - [ ] One paragraph: trusted vs trustworthy.
+- [ ] Name the four approaches with an example at different lifecycle stages: intrinsic, extrinsic, design and implementation, operational policy and process.
+- [ ] Describe at least one current system of extrinsic assurance (red teaming, security testing, supply chain assurance or Common Criteria) and its benefits.
 - [ ] Intrinsic (design, code review) vs extrinsic (CREST pen test, red team).
 - [ ] One line on limits: tests are a sample at a point in time.
 

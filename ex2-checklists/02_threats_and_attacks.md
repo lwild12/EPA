@@ -6,6 +6,8 @@
 
 ## Intel (30 min)
 - [ ] Describe the process in 4 words: collect, check reliability, analyse, share.
+- [ ] Combine two or more sources into one **enriched view** (a table: source 1, source 2, meaning for CareLink).
+- [ ] Show one intel-to-attack link: a threat you found, then a lab attack that demonstrates it.
 - [ ] List sources: NCSC, CISA KEV, MITRE ATT&CK, OWASP, vendor intel.
 - [ ] Passive, lawful monitoring only for dark web / social.
 - [ ] Pick 3 realistic threats to CareLink (human and technical).
@@ -30,8 +32,10 @@ Run the prototype first (`ex1-design/prototype/README.md`). Note: it has not bee
 | Brute force a token (Burp Intruder) | | | |
 | IDOR / bad upload | | | |
 
-## Extras (item 12, only after everything above)
-- [ ] Threats to processes: helpdesk password resets, supplier access.
+## MERIT (item 12): threats to services and processes
+- [ ] Threats to processes: helpdesk password resets, supplier access, leavers, staff enabling a phish.
+
+## DISTINCTION (item 12, only if ahead)
 - [ ] A mitigation for each of those.
 
 ## If stuck
