@@ -69,6 +69,8 @@ Check these against the exact wording in your brief.
 ## Where things are
 | Need | File |
 |---|---|
+| **Thursday full guide (print this)** | `ex2-checklists/ex2_thursday_guide_pocketjet.pdf` (source: `ex2_thursday_guide.md`) |
+| **Thursday fill-in sheets (print this)** | `ex2-checklists/ex2_thursday_tracker_pocketjet.pdf` (source: `ex2_thursday_tracker.md`) |
 | Malware steps | `ex2-checklists/01_malware.md`, `ex2-malware/` |
 | Sample ideas | `ex2-malware/SAMPLE_OPTIONS.md` |
 | Threat model template | `templates/stride_threat_model.md` |
