@@ -57,13 +57,13 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 
 ## 1. Start and RoE (30 min)
 
-**Done when:** RoE is final and the hash matches everywhere.
+**The RoE is already done (prepared Thursday). Today: fill in the v2 time and check the hash.**
+**Done when:** the v2 time is filled in and the hash matches everywhere.
 
 - ☐ Write your real start time on the pocket guide.
 - ☐ Make a folder `Ex2_Day2` with `screenshots`, `outputs`, `notes`.
 - ☐ Copy in the bring-in files.
-- ☐ Open the RoE. Check the authorisation line is true: "v1 authorised 09:30, 12 Nov 2026. v2 updated [today's time]."
-- ☐ Check the RoE names who you escalate to, names CAPEv2 and Any.run, and says the hash is re-checked at the end.
+- ☐ Open the RoE. Fill in the v2 update time: "v1 authorised 09:30, 12 Nov 2026. v2 updated [today's time]."
 - ☐ Work out the sample hash again: `Get-FileHash -Algorithm SHA256 <file>`. Write the time and value in `notes`.
 - ☐ Compare it with the RoE. If it does not match: stop, write a note, do not continue with that file.
 - ☐ If the sample file is not on this PC, write: "Hash taken from the CAPE report (Fig 2)".

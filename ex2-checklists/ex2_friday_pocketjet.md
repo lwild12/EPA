@@ -41,15 +41,13 @@ Email at break start: ☐ ______  Email at break end: ☐ ______
 
 # 1. Start and RoE (09:30 to 10:00)
 
-**Done when:** RoE is final and the hash matches everywhere.
+**RoE is already DONE (prepared Thu). Today: v2 time and hash only.**
+**Done when:** the v2 time is filled in and the hash matches everywhere.
 
 | ☐ Write your real start time on page 1
 | ☐ Make folder `Ex2_Day2`: screenshots, outputs, notes
 | ☐ Copy in your bring-in files
-| ☐ RoE says: "v1 authorised 09:30, 12 Nov. v2 updated [time today]"
-| ☐ RoE names who you escalate to
-| ☐ RoE names CAPEv2 and Any.run
-| ☐ RoE says the hash is re-checked at the end
+| ☐ RoE: fill in the v2 update time (today)
 | ☐ Re-check the sample: `Get-FileHash -Algorithm SHA256 <file>`
 | ☐ Write the time and value in notes
 | ☐ Matches the RoE? If not, STOP and write a note
@@ -58,6 +56,7 @@ Email at break start: ☐ ______  Email at break end: ☐ ______
 
 # 2. Intel table (10:00 to 10:45)
 
+**Table 1 is pre-filled (Thu). Today: verify, replace with real lookups.**
 **Done when:** every row has all 8 columns, and 2 external sources are cited.
 
 | ☐ One real lookup per row, short result in Enrichment
@@ -76,7 +75,8 @@ Email at break start: ☐ ______  Email at break end: ☐ ______
 
 # 3. Malware table (10:45 to 11:30)
 
-**Done when:** Table 2 is filled and the merit paragraph is written.
+**Table 2 is pre-filled (Thu). Today: verify it, then write the merit paragraph.**
+**Done when:** Table 2 is checked and the merit paragraph is written.
 
 | ☐ Each Fig really shows what the row claims
 | ☐ Check every ATT&CK ID against Fig 7
@@ -102,6 +102,7 @@ Email at break start: ☐ ______  Email at break end: ☐ ______
 
 # 4. Threat table (11:30 to 12:15)
 
+**Table 3 is pre-filled (Thu). Today: verify, tidy, add merit sentences.**
 **Done when:** 6 rows complete, a mitigation on each.
 
 | ☐ Each row has asset, entry point, technique, impact, control
