@@ -93,9 +93,9 @@ So these are not optional extras if you want Merit.
 |---|---|
 | **Thursday full guide (print this)** | `ex2-checklists/ex2_thursday_guide_pocketjet.pdf` (source: `ex2_thursday_guide.md`) |
 | **Thursday fill-in sheets (print this)** | `ex2-checklists/ex2_thursday_tracker_pocketjet.pdf` (source: `ex2_thursday_tracker.md`) |
-| **Friday pocket guide (print this)** | `ex2-checklists/ex2_friday_pocketjet.pdf` (source: `ex2_friday_pocketjet.md`) |
-| **Friday full guide (read tonight)** | `ex2-checklists/ex2_friday_guide.md` |
-| **Justification draft (check, adapt, retype)** | `ex2-checklists/ex2_justification_draft.md` |
+| **Friday pocket guide (print this)** | `friday/pocket_guide.pdf` (source: `pocket_guide.md`) |
+| **Friday full walkthrough (read tonight)** | `friday/README.md` |
+| **Justification draft (check, adapt, retype)** | `friday/justification_draft.md` |
 | Malware steps | `ex2-checklists/01_malware.md`, `ex2-malware/` |
 | Sample ideas | `ex2-malware/SAMPLE_OPTIONS.md` |
 | Threat model template | `templates/stride_threat_model.md` |
