@@ -15,8 +15,8 @@ Screenshots: **max 5 pages A4.** Upload to **Blackboard**. Submission is **final
 
 | # | Block | Clock | Done |
 | --- | --- | --- | --- |
-| 1 | Start and RoE | 09:30 to 10:00 | ☐ |
-| 2 | Intel table | 10:00 to 10:45 | ☐ |
+| 1 | Start | 09:30 to 09:45 | ☐ |
+| 2 | Intel table | 09:45 to 10:45 | ☐ |
 | 3 | Malware table | 10:45 to 11:30 | ☐ |
 | 4 | Threat table | 11:30 to 12:15 | ☐ |
 |   | **Break + 2 emails** | 12:15 to 12:45 | ☐ |
@@ -35,25 +35,24 @@ Email at break start: ☐ ______  Email at break end: ☐ ______
 | Malware | Mechanisms | Obfuscation | Own tools |
 | Threats | Enriched view, lab test | Services and processes | Mitigations |
 | Assurance | Strategy | none | none |
-| Legal | RoE, evidence | none | none |
+| Legal | Evidence handling | none | none |
 
 <div class="pb"></div>
 
-# 1. Start and RoE (09:30 to 10:00)
+# 1. Start (09:30 to 09:45)
 
-**Done when:** the v2 time is filled in and the hash matches everywhere.
+**Done when:** folders are ready and the hash is re-checked.
 
 | ☐ Write your real start time on page 1
 | ☐ Make folder `Ex2_Day2`: screenshots, outputs, notes
 | ☐ Copy in your bring-in files
-| ☐ RoE: fill in the v2 update time (today)
 | ☐ Re-check the sample: `Get-FileHash -Algorithm SHA256 <file>`
 | ☐ Write the time and value in notes
-| ☐ Matches the RoE? If not, STOP and write a note
+| ☐ Matches the hash in Table 1? If not, STOP and write a note
 | ☐ File not on this PC? Write "hash from CAPE report (Fig 2)"
 | ☐ Open the v11 brief. Tick the 5 yellow topics
 
-# 2. Intel table (10:00 to 10:45)
+# 2. Intel table (09:45 to 10:45)
 
 **Done when:** every row has all 8 columns, and 2 external sources are cited.
 
@@ -209,7 +208,8 @@ Email at break start: ☐ ______  Email at break end: ☐ ______
 | ☐ Words 900 to 1,100
 | ☐ Every Fig and Table mentioned by number
 | ☐ Screenshots 5 pages A4 or fewer
-| ☐ Same hash in RoE, Table 1 and justification
+| ☐ Same hash in Table 1 and the justification
+| ☐ RoE, tables, figures and justification are all in the upload
 | ☐ No [CONFIRM] or [N] left
 | ☐ Own work vs pre-written is clear
 | ☐ No sample, credentials or real personal data in the upload
@@ -227,6 +227,6 @@ Do not start new work.
 ## If you run short of time
 
 1. Malware merit paragraph + Threat table
-2. RoE + hash
+2. Hash + evidence-handling paragraph
 3. Short assurance: objectives, test plan, four approaches
 4. A short honest justification beats a missing one

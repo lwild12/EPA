@@ -42,8 +42,8 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 
 | # | Block | Mins | Clock |
 | --- | --- | --- | --- |
-| 1 | Start and RoE | 30 | 09:30 to 10:00 |
-| 2 | Intel table | 45 | 10:00 to 10:45 |
+| 1 | Start | 15 | 09:30 to 09:45 |
+| 2 | Intel table | 60 | 09:45 to 10:45 |
 | 3 | Malware table | 45 | 10:45 to 11:30 |
 | 4 | Threat table | 45 | 11:30 to 12:15 |
 |   | **Break + 2 emails** | 30 | 12:15 to 12:45 |
@@ -55,21 +55,19 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 
 ---
 
-## 1. Start and RoE (30 min)
+## 1. Start (15 min)
 
-**The RoE is already done (prepared Thursday). Today: fill in the v2 time and check the hash.**
-**Done when:** the v2 time is filled in and the hash matches everywhere.
+**Done when:** folders are ready and the hash is re-checked.
 
 - ☐ Write your real start time on the pocket guide.
 - ☐ Make a folder `Ex2_Day2` with `screenshots`, `outputs`, `notes`.
 - ☐ Copy in the bring-in files.
-- ☐ Open the RoE. Fill in the v2 update time: "v1 authorised 09:30, 12 Nov 2026. v2 updated [today's time]."
 - ☐ Work out the sample hash again: `Get-FileHash -Algorithm SHA256 <file>`. Write the time and value in `notes`.
-- ☐ Compare it with the RoE. If it does not match: stop, write a note, do not continue with that file.
+- ☐ Compare it with the hash in Table 1. If it does not match: stop, write a note, do not continue with that file.
 - ☐ If the sample file is not on this PC, write: "Hash taken from the CAPE report (Fig 2)".
 - ☐ Open the v11 brief. Tick off the five yellow topics: malware, threats, assurance, legal and ethics, justification.
 
-## 2. Intel table (45 min)
+## 2. Intel table (60 min)
 
 **Done when:** every row of Table 1 has all 8 columns filled, and you have cited at least 2 external sources.
 
@@ -160,7 +158,8 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 - ☐ Words: 900 to 1,100.
 - ☐ Every Fig and every Table mentioned in the text.
 - ☐ Screenshots: 5 pages of A4 or fewer.
-- ☐ The hash is the same in the RoE, Table 1 and the justification.
+- ☐ The hash is the same in Table 1 and the justification.
+- ☐ The RoE, tables, figures and justification are all in the upload.
 - ☐ No `[CONFIRM]` or `[N]` left.
 - ☐ It is clear what is your own work and what is pre-written.
 - ☐ No malware sample, no credentials, no real personal data in the upload.
@@ -178,7 +177,7 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 Do these in order:
 
 1. The Malware merit paragraph and the Threat table (merit and distinction live here).
-2. The RoE and the hash (pass, legal).
+2. The hash and an evidence-handling paragraph (pass, legal).
 3. A short assurance strategy: objectives, test plan, four approaches.
 4. The justification. A short honest one beats a missing one.
 5. Everything else.
