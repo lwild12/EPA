@@ -41,7 +41,6 @@ Email at break start: ☐ ______  Email at break end: ☐ ______
 
 # 1. Start and RoE (09:30 to 10:00)
 
-**RoE is already DONE (prepared Thu). Today: v2 time and hash only.**
 **Done when:** the v2 time is filled in and the hash matches everywhere.
 
 | ☐ Write your real start time on page 1
@@ -56,7 +55,6 @@ Email at break start: ☐ ______  Email at break end: ☐ ______
 
 # 2. Intel table (10:00 to 10:45)
 
-**Table 1 is pre-filled (Thu). Today: verify, replace with real lookups.**
 **Done when:** every row has all 8 columns, and 2 external sources are cited.
 
 | ☐ One real lookup per row, short result in Enrichment
@@ -75,7 +73,6 @@ Email at break start: ☐ ______  Email at break end: ☐ ______
 
 # 3. Malware table (10:45 to 11:30)
 
-**Table 2 is pre-filled (Thu). Today: verify it, then write the merit paragraph.**
 **Done when:** Table 2 is checked and the merit paragraph is written.
 
 | ☐ Each Fig really shows what the row claims
@@ -102,10 +99,8 @@ Email at break start: ☐ ______  Email at break end: ☐ ______
 
 # 4. Threat table (11:30 to 12:15)
 
-**Table 3 is pre-filled (Thu). Today: verify, tidy, add merit sentences.**
 **Done when:** 6 rows complete, a mitigation on each.
 
-| ☐ Each row has asset, entry point, technique, impact, control
 | ☐ Write 3 lines: assets, entry points, trust boundaries
 | ☐ Boundaries: device to API, API to database
 | ☐ Say the SaaS assumption
