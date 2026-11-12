@@ -1,8 +1,7 @@
 # Ex2 Friday: pocket guide
 
-**Test 09:30 to 16:00.** One 30-minute break (12:15 to 12:45).
-Screenshots: **max 5 pages A4.** Upload to **Blackboard**. Submission is **final**. **No AI chat, no messaging.**
-**Start: 09:30**
+**Test 09:30 to 16:00.** One 30-minute break (12:30 to 13:00).
+Screenshots: **max 5 pages A4.** Upload to **Blackboard**. Submission is **final**.
 
 **Rules**
 
@@ -15,18 +14,15 @@ Screenshots: **max 5 pages A4.** Upload to **Blackboard**. Submission is **final
 
 | # | Block | Clock | Done |
 | --- | --- | --- | --- |
-| 1 | Start | 09:30 to 09:45 | ☐ |
-| 2 | Intel table | 09:45 to 10:45 | ☐ |
-| 3 | Malware table | 10:45 to 11:30 | ☐ |
-| 4 | Threat table | 11:30 to 12:15 | ☐ |
-|   | **Break** | 12:15 to 12:45 | ☐ |
-| 5 | Lab evidence, screenshots | 12:45 to 13:15 | ☐ |
-| 6 | Assurance strategy | 13:15 to 13:50 | ☐ |
-| 7 | Justification | 13:50 to 14:50 | ☐ |
-| 8 | Final check, UPLOAD | 14:50 to 15:30 | ☐ |
-| 9 | Buffer, no new work | 15:30 to 16:00 | ☐ |
-
-Break started: ______  Break ended: ______
+| 1 | Intel table | 09:30 to 10:30 | ☐ |
+| 2 | Malware table | 10:30 to 11:30 | ☐ |
+| 3 | Threat table | 11:30 to 12:30 | ☐ |
+|   | **Break** | 12:30 to 13:00 | ☐ |
+| 4 | Lab evidence, screenshots | 13:00 to 13:30 | ☐ |
+| 5 | Assurance strategy | 13:30 to 14:05 | ☐ |
+| 6 | Justification | 14:05 to 15:05 | ☐ |
+| 7 | Final check, UPLOAD | 15:05 to 15:45 | ☐ |
+| 8 | Buffer, no new work | 15:45 to 16:00 | ☐ |
 
 ## What earns what
 
@@ -39,19 +35,7 @@ Break started: ______  Break ended: ______
 
 <div class="pb"></div>
 
-# 1. Start (09:30 to 09:45)
-
-**Done when:** folders are ready and the hash is re-checked.
-
-| ☐ Make folder `Ex2_Day2`: screenshots, outputs, notes
-| ☐ Copy in your bring-in files
-| ☐ Re-check the sample: `Get-FileHash -Algorithm SHA256 <file>`
-| ☐ Write the time and value in notes
-| ☐ Matches the hash in Table 1? If not, STOP and write a note
-| ☐ File not on this PC? Write "hash from CAPE report (Fig 2)"
-| ☐ Open the v11 brief. Tick the 5 yellow topics
-
-# 2. Intel table (09:45 to 10:45)
+# 1. Intel table (09:30 to 10:30)
 
 **Done when:** every row has all 8 columns, and 2 external sources are cited.
 
@@ -69,7 +53,7 @@ Break started: ______  Break ended: ______
 
 <div class="pb"></div>
 
-# 3. Malware table (10:45 to 11:30)
+# 2. Malware table (10:30 to 11:30)
 
 **Done when:** Table 2 is checked and the merit paragraph is written.
 
@@ -95,7 +79,7 @@ Break started: ______  Break ended: ______
 
 <div class="pb"></div>
 
-# 4. Threat table (11:30 to 12:15)
+# 3. Threat table (11:30 to 12:30)
 
 **Done when:** 6 rows complete, a mitigation on each.
 
@@ -114,15 +98,9 @@ Break started: ______  Break ended: ______
 
 | ☐ Every row has a mitigation in the Control column
 
-# Break (12:15 to 12:45)
-
-| ☐ Note the time the break starts: ______
-| ☐ Eat. Water. Walk. Look far away.
-| ☐ Note the time it ends: ______
-
 <div class="pb"></div>
 
-# 5. Lab evidence and screenshots (12:45 to 13:15)
+# 4. Lab evidence and screenshots (13:00 to 13:30)
 
 **Done when:** lab test written up, screenshots fit in 5 pages of A4.
 
@@ -160,7 +138,7 @@ Break started: ______  Break ended: ______
 
 <div class="pb"></div>
 
-# 6. Assurance strategy (13:15 to 13:50)
+# 5. Assurance strategy (13:30 to 14:05)
 
 **Done when:** objectives, a 5-row test plan, and the four approaches. **Pass only: stop on time.**
 
@@ -182,7 +160,7 @@ Break started: ______  Break ended: ______
 
 <div class="pb"></div>
 
-# 7. Justification (13:50 to 14:50)
+# 6. Justification (14:05 to 15:05)
 
 **Done when:** 900 to 1,100 words, retyped in your own words, no [CONFIRM] left.
 
@@ -192,7 +170,7 @@ Break started: ______  Break ended: ______
 | ☐ Retype section 1 in your own words (about 12 min)
 | ☐ Resolve each [CONFIRM]
 | ☐ Repeat for section 2, then 3, then 4
-| ☐ Section 3 must match your block 6 strategy
+| ☐ Section 3 must match your block 5 strategy
 | ☐ Add one thing you did that the draft missed
 | ☐ Every Fig and Table mentioned by number
 | ☐ Count words (body only). Target 1,000
@@ -202,7 +180,7 @@ Break started: ______  Break ended: ______
 
 <div class="pb"></div>
 
-# 8. Final check and UPLOAD (14:50 to 15:30)
+# 7. Final check and UPLOAD (15:05 to 15:45)
 
 | ☐ Words 900 to 1,100
 | ☐ Every Fig and Table mentioned by number
@@ -219,7 +197,7 @@ Break started: ______  Break ended: ______
 
 **Submitted at: ________**
 
-# 9. Buffer (15:30 to 16:00)
+# 8. Buffer (15:45 to 16:00)
 
 Do not start new work.
 

@@ -5,7 +5,7 @@ Today: finish the evidence, write the assurance strategy, write the justificatio
 
 **Rules from the v4 example pack. You confirmed the v4 pack applies, with the v11 brief for what must be attempted.**
 
-- Tests run **09:30 to 16:00**. Active time is 6 hours. Take **one 30-minute break** (12:15 to 12:45). No supervisor emails needed: you are in a single room.
+- Tests run **09:30 to 16:00**. Active time is 6 hours. Take **one 30-minute break** (12:30 to 13:00). No supervisor emails needed: you are in a single room.
 - Open book, but it is an individual test. **No messaging anyone and no AI chat during test hours.** Everything you need is in this guide and your bring-in files.
 - Screenshots: **maximum 5 pages of A4**. Crop tightly.
 - Upload to **Blackboard**. Submission cannot be reloaded or amended.
@@ -42,31 +42,19 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 
 | # | Block | Mins | Clock |
 | --- | --- | --- | --- |
-| 1 | Start | 15 | 09:30 to 09:45 |
-| 2 | Intel table | 60 | 09:45 to 10:45 |
-| 3 | Malware table | 45 | 10:45 to 11:30 |
-| 4 | Threat table | 45 | 11:30 to 12:15 |
-|   | **Break** | 30 | 12:15 to 12:45 |
-| 5 | Lab evidence and screenshots | 30 | 12:45 to 13:15 |
-| 6 | Assurance strategy | 35 | 13:15 to 13:50 |
-| 7 | Justification | 60 | 13:50 to 14:50 |
-| 8 | Final check and upload | 40 | 14:50 to 15:30 |
-| 9 | Buffer (no new work) | 30 | 15:30 to 16:00 |
+| 1 | Intel table | 60 | 09:30 to 10:30 |
+| 2 | Malware table | 60 | 10:30 to 11:30 |
+| 3 | Threat table | 60 | 11:30 to 12:30 |
+|   | **Break** | 30 | 12:30 to 13:00 |
+| 4 | Lab evidence and screenshots | 30 | 13:00 to 13:30 |
+| 5 | Assurance strategy | 35 | 13:30 to 14:05 |
+| 6 | Justification | 60 | 14:05 to 15:05 |
+| 7 | Final check and upload | 40 | 15:05 to 15:45 |
+| 8 | Buffer (no new work) | 15 | 15:45 to 16:00 |
 
 ---
 
-## 1. Start (15 min)
-
-**Done when:** folders are ready and the hash is re-checked.
-
-- ☐ Make a folder `Ex2_Day2` with `screenshots`, `outputs`, `notes`.
-- ☐ Copy in the bring-in files.
-- ☐ Work out the sample hash again: `Get-FileHash -Algorithm SHA256 <file>`. Write the time and value in `notes`.
-- ☐ Compare it with the hash in Table 1. If it does not match: stop, write a note, do not continue with that file.
-- ☐ If the sample file is not on this PC, write: "Hash taken from the CAPE report (Fig 2)".
-- ☐ Open the v11 brief. Tick off the five yellow topics: malware, threats, assurance, legal and ethics, justification.
-
-## 2. Intel table (60 min)
+## 1. Intel table (60 min)
 
 **Done when:** every row of Table 1 has all 8 columns filled, and you have cited at least 2 external sources.
 
@@ -82,7 +70,7 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 - ☐ Mark `1.0.0.0` and similar as false positives (version strings).
 - ☐ Write 2 sentences on what changed after enrichment. This is your "enhancement" demonstration.
 
-## 3. Malware table (45 min)
+## 2. Malware table (60 min)
 
 **Done when:** Table 2 is filled and the merit paragraph is written.
 
@@ -94,7 +82,7 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 - ☐ Write 1 line on what is yours and what is pre-written (the triage script).
 - ☐ **DISTINCTION (only if true):** did you script or adapt a tool yourself? If not, skip it. Do not claim it.
 
-## 4. Threat table (45 min)
+## 3. Threat table (60 min)
 
 **Done when:** all 6 rows complete, with a mitigation on each.
 
@@ -104,13 +92,11 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 - ☐ Write 3 lines: assets, entry points, trust boundaries (device to API, API to database), and the SaaS assumption.
 - ☐ **DISTINCTION:** check every row has a mitigation in the Control column.
 
-## Break (12:15 to 12:45)
+## Break (12:30 to 13:00)
 
-- ☐ Note the time the break starts: ______
 - ☐ Eat. Drink water. Walk. Look at something far away.
-- ☐ Note the time it ends: ______
 
-## 5. Lab evidence and screenshots (30 min)
+## 4. Lab evidence and screenshots (30 min)
 
 **Done when:** the lab test is written up and screenshots fit in 5 pages of A4.
 
@@ -123,7 +109,7 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 - ☐ If over 5 pages, cut in this order: crop Fig 7 harder, stack 9a and 9b together, merge Figs 5 and 6, drop Fig 8.
 - ☐ Give each figure a number and a one-line caption.
 
-## 6. Assurance strategy (35 min)
+## 5. Assurance strategy (35 min)
 
 **Done when:** you have objectives, a test plan table (5 rows or more), and the four approaches.
 
@@ -137,9 +123,9 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 - ☐ Write 2 lines: "trusted" versus "trustworthy".
 - ☐ Write 2 lines: how third-party testing contributes.
 - ☐ Write the findings workflow: record, rate, fix, retest. Write what triggers a retest (release, supplier change, new threat).
-- ☐ Stop at 13:50. This is pass only.
+- ☐ Stop at 14:05. This is pass only.
 
-## 7. Justification (60 min)
+## 6. Justification (60 min)
 
 **Done when:** 900 to 1,100 words, retyped in your own words, no `[CONFIRM]` left.
 
@@ -147,12 +133,12 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 - ☐ Check each claim against your figures and tables. Delete anything that is not true of your work.
 - ☐ Retype section 1 in your own words. Resolve each `[CONFIRM]`.
 - ☐ Repeat for **section 2**, then **3**, then **4**. (About 12 minutes each.)
-- ☐ Section 3 must match the strategy you wrote in block 6.
+- ☐ Section 3 must match the strategy you wrote in block 5.
 - ☐ Add one thing you did that the draft missed.
 - ☐ Every figure and table must be mentioned by number.
 - ☐ Count the words (body only). Target 1,000. If you are under 900, add a sentence on what you did not do or what you would add next. If you are over 1,100, cut the longest sentence in the longest section.
 
-## 8. Final check and upload (40 min)
+## 7. Final check and upload (40 min)
 
 - ☐ Words: 900 to 1,100.
 - ☐ Every Fig and every Table mentioned in the text.
@@ -166,7 +152,7 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 - ☐ **Upload to Blackboard.**
 - ☐ Check that it shows as submitted. Take a screenshot of the confirmation.
 
-## 9. Buffer (15:30 to 16:00)
+## 8. Buffer (15:45 to 16:00)
 
 - ☐ Do not start new work.
 - ☐ If the upload fails, try again, then tell your supervisor straight away. Write down the time.
