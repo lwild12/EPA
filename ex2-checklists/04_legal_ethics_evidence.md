@@ -1,6 +1,10 @@
 # D. Legal, ethics and evidence (time-box: 1.5 hours)
 
-**Done when:** you have rules of engagement, legal duties named, evidence handling described, and an IR outline.
+**Brief topic 4:** Organise testing and investigation work in accordance with legal and ethical requirements.
+
+**Done when:** you have rules of engagement (scope and authorisation), legal duties named, evidence handling described, safe testing procedures and an auditable record.
+
+Brief prompts this file covers: scope, authorisation and boundaries; legal, regulatory, organisational and contractual requirements; handling of sensitive information, credentials, malware and evidence; safe testing procedures (rules of engagement, test environments, access controls, backup/recovery, escalation); an auditable record of activities, evidence, decisions and findings.
 
 ## Step 1. Rules of engagement (do this FIRST, tonight)
 Fill in and keep as a half page:
@@ -34,14 +38,12 @@ Use `templates/uk_legal_reference.md`. Name the duty each control or activity su
 - [ ] Say how law applies to **intelligence collection and analysis**: data protection, human rights and privacy.
 - [ ] Say how law applies to testing third parties (ethical hacking, pen testing): authorisation first.
 
-## Step 5. IR plan (30 min)
-The older v4 brief asks for a **comprehensive** plan covering:
-- [ ] The role and responsibilities of **each team member**.
-- [ ] Procedures for **collecting and analysing data**.
-- [ ] Measures that protect **privacy and confidentiality**.
-- [ ] Legal and ethical requirements for IR: data protection law, privacy, confidentiality and relevant industry standards.
-- [ ] Securing evidence so it could support legal proceedings.
+## Step 5. Auditable record (15 min)
+The brief wants work you can show was **authorised, proportionate and professionally conducted**.
+- [ ] Evidence log (`00_evidence_log.md`) has a time for every action.
+- [ ] Decisions recorded with a one-line reason (for example why you chose this sample).
+- [ ] Findings recorded, with what you did about each.
 
-- [ ] Start from `templates/incident_response_plan.md`.
-- [ ] Keep to: roles, severity, the 6 lifecycle steps, evidence handling, notification.
-- [ ] Add the ransomware / infostealer playbook that matches your sample.
+## Optional extras (not in the v11 Ex2 brief)
+- **Incident response plan:** the v11 brief puts this in **Ex3**, not Ex2. The older v4 pack listed it in Ex2. Only do it here if your live brief asks. Start from `templates/incident_response_plan.md`.
+- **Autopsy / M57-Jean:** good supporting evidence for chain of custody. See `ex2-autopsy/README.md`. Do it after all five topics are done.

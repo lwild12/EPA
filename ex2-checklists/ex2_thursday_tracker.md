@@ -13,7 +13,7 @@
 6. No messaging anyone and no AI chat during the test.
 
 **Highlighted (mandatory) topics in my brief:**
-☐ Malware   ☐ Threats and attacks   ☐ Assurance   ☐ Legal and ethics   ☐ Autopsy   ☐ Justification
+☐ Malware   ☐ Threats and attacks   ☐ Assurance   ☐ Legal and ethics   ☐ Justification   (Autopsy and IR plan: optional extras)
 
 ## Schedule (09:30 to 16:00)
 

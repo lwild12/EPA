@@ -1,14 +1,18 @@
 # C. Assurance strategy (time-box: 1 hour)
 
+**Brief topic 3:** Develop an assurance strategy.
+
 **Done when:** one page that says what you will test, how, how often, and how findings are fixed and retested.
 
 Start from `templates/assurance_strategy.md`. Do not write from scratch.
 
+- [ ] **What needs assuring:** list the system parts, then set clear **security objectives, requirements and acceptance criteria** (what "pass" looks like for each).
+- [ ] **Which testing approaches** and why: vulnerability assessment, configuration testing, penetration testing, code analysis, security-focused functional testing.
 - [ ] Define likelihood and impact scales (reuse your Ex1 1-5 scales).
 - [ ] One control per threat from your threat model.
 - [ ] How each control is tested (scan, config check, pen test, code review).
 - [ ] Priorities: highest asset criticality and impact first.
-- [ ] Test plan: scope, cases, expected result, who, evidence.
+- [ ] Test plan: scope, test cases, expected outcomes, **responsibilities**, evidence and **reporting**.
 - [ ] Findings: record, assess, fix, retest.
 - [ ] How assurance is kept when the system changes.
 - [ ] Risk assessment plan: likelihood and impact for each threat from B (reuse your scale).

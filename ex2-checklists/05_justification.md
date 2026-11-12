@@ -1,5 +1,7 @@
 # F. Justification (time-box: 45 min). Target 1,000 words (900 to 1,100)
 
+**Brief topic 5:** Produce a written justification for the approach taken (1,000 +/- 100 words). One document for the whole of Ex2.
+
 Write this LAST, from your evidence log. Fill each part in 3 to 5 short sentences.
 
 | Part | Words | Say |
@@ -8,9 +10,8 @@ Write this LAST, from your evidence log. Fill each part in 3 to 5 short sentence
 | Malware (A) | 200 | Sample, hash, what it does, ATT&CK, what CareLink should do |
 | Threats and attacks (B) | 200 | Top threats, what you tested, what worked, fixes |
 | Assurance (C) | 150 | What is tested, how often, how findings are fixed |
-| Legal, ethics, evidence (D, E) | 150 | CMA, UK GDPR, Information Commission, evidence handling, Autopsy findings |
-| Autopsy (E) | 100 | What you found, how you kept evidence sound |
-| Limits and next steps | 100 | What you did not do, what you would add |
+| Legal, ethics, evidence (D) | 200 | Scope and authorisation, CMA, UK GDPR, Information Commission, safe testing, evidence handling, audit record |
+| Limits and next steps | 150 | What you did not do, what you would add. (If you did Autopsy, add 1 to 2 sentences on it here.) |
 
 ## The 5-part pattern for each decision
 1. What you chose. 2. Which threat or requirement. 3. Evidence (figure number). 4. One alternative you rejected. 5. Remaining risk.

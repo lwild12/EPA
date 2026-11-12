@@ -1,7 +1,7 @@
 # Ex2 Thursday (Day 1): full guide
 
 One small step at a time. Do the step, tick it, move on. Do not read ahead.
-Today: **A. Malware** and **B. Threats and attacks**. Tomorrow: Autopsy, assurance, legal, justification.
+Today: **A. Malware** and **B. Threats and attacks**. Tomorrow: assurance, legal and ethics, justification (Autopsy only if time is left).
 
 **Rules from the older v4 example pack. Check each against your live brief.**
 
@@ -316,7 +316,7 @@ Merit means threats to the system **including services and processes**, not just
 
 - ☐ Autopsy installed and opens.
 - ☐ M57-Jean image hashed and ready.
-- ☐ Write on a sticky note: "Friday: E Autopsy, C assurance, D legal and IR, F justification, upload by 14:30."
+- ☐ Write on a sticky note: "Friday: C assurance, D legal and ethics, F justification, upload by 14:30. Autopsy only if time."
 
 ## If something breaks
 
