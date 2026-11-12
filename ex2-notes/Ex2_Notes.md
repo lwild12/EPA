@@ -1,3 +1,5 @@
+> Text only. Screenshots are in `Ex2_Notes.docx`.
+
 Agent Tesla – Infostealer
 
 PE32 Executable .net assembly for MS windows
@@ -8,15 +10,15 @@ Infostealers like Agent Tesla target saved credentials, like the sign in details
 
 Infostealers are often delivered by mechanisms such as phishing emails, which rely on human interaction and susceptibility.
 
-<img src="media/image1.png" style="width:6.26806in;height:8.75556in" /><img src="media/image2.png" style="width:1.46895in;height:0.38547in" />
+
 
 Very few imports, likely a packed sample. This limits the static view of the file.
 
 sample checked in any.run and CAPEv2 sandbox
 
-<img src="media/image3.png" style="width:5.8654in;height:3.4484in" /><img src="media/image4.png" style="width:6.26806in;height:3.01875in" /><img src="media/image5.png" style="width:6.26806in;height:3.17361in" /><img src="media/image6.png" style="width:6.26806in;height:1.78958in" /><img src="media/image7.png" style="width:6.26806in;height:6.08125in" />
 
-<img src="media/image8.png" style="width:6.26806in;height:2.08819in" /><img src="media/image9.png" style="width:6.26806in;height:4.66389in" />
+
+
 
 Static analysis and dynamic analysis match for the strings, but all other analysis is incomplete for the static analysis due to the packed nature of the sample.
 
