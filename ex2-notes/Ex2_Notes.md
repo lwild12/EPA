@@ -45,3 +45,51 @@ Small cache to restrict the data that is held on devices that infostealers could
 Isolate devices where suspicion of compromise. Revoke tokens and credentials associated with the user remote wipe.
 
 Where a delivery vector has been identified, issue awareness messaging to staff, and block/moderate where appropriate
+
+
+---
+
+## Guidance: what to add next (one step at a time)
+
+Tick each box as you go. Challenge points are my reading: check them against your sandbox output.
+
+### 1. Static evidence: packed or not?
+- [ ] Few imports is not proof of packing. A .NET assembly normally imports almost nothing (only mscoree.dll).
+- [ ] Add stronger evidence: section entropy, or Detect It Easy output. Screenshot it.
+- [ ] If you can, open the file in ILSpy or dnSpy. Readable code is better static evidence than "incomplete".
+
+### 2. Persistence: check the exact keys
+- [ ] As I understand it, StartupApproved\Run only records enabled or disabled. The entry that launches the program is normally in the Run key itself.
+- [ ] Open the CAPE or Any.run registry output. Write down every key that was written.
+- [ ] Note where xws.exe was copied to (the folder path).
+
+### 3. Split the five mechanisms (the brief names them)
+- [ ] Access: phishing or download. Say which one the sandbox showed.
+- [ ] Execute: what launches, and from which process. Add the process tree figure.
+- [ ] Persist: the key(s) from step 2.
+- [ ] Communicate: protocol, destination domain or IP, port. Take these from the CAPE network tab. These are your IOCs.
+- [ ] Evade: say what you saw (not just "encrypted payloads"), and how you got past it. This is the Merit item 9 point.
+- [ ] Write "not seen" for anything the sandbox did not show.
+
+### 4. Map to ATT&CK (candidates: confirm each against what you saw)
+- [ ] Phishing: T1566
+- [ ] Credentials from password stores: T1555
+- [ ] Registry run keys: T1547.001
+- [ ] Exfiltration over C2 channel: T1041
+- [ ] Obfuscated files or information: T1027
+
+### 5. Detection, not just prevention (the brief says detected, contained or mitigated)
+- [ ] Detect: alert on a new startup registry entry.
+- [ ] Detect: alert on workstations making outbound connections to unusual ports or mail servers.
+- [ ] Detect: write one YARA rule from ex2-malware/rules/generic_triage.yar and test it.
+- [ ] Contain: isolate the device, revoke tokens and credentials (already in your notes).
+- [ ] Mitigate: short-lived tokens, MFA, conditional access, small cache (already in your notes). Link each to a CareLink control from Ex1.
+
+### 6. Compare static and dynamic
+- [ ] Write two lines: where they agree (strings) and what each one missed.
+- [ ] Say plainly that the packed sample limited static analysis.
+
+### 7. Make the figures traceable
+- [ ] Replace each [] placeholder with a numbered figure (Fig 1, Fig 2...).
+- [ ] Log each in ex2-checklists/00_evidence_log.md with the tool and time.
+- [ ] Mention every figure number in the text.
