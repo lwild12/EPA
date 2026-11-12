@@ -1,8 +1,8 @@
 # Ex2 Friday: pocket guide
 
-**Test 09:30 to 16:00.** One 30-minute break: **email your supervisor at the START and at the END.**
+**Test 09:30 to 16:00.** One 30-minute break (12:15 to 12:45).
 Screenshots: **max 5 pages A4.** Upload to **Blackboard**. Submission is **final**. **No AI chat, no messaging.**
-**Actual start: ________**
+**Start: 09:30**
 
 **Rules**
 
@@ -19,14 +19,14 @@ Screenshots: **max 5 pages A4.** Upload to **Blackboard**. Submission is **final
 | 2 | Intel table | 09:45 to 10:45 | ☐ |
 | 3 | Malware table | 10:45 to 11:30 | ☐ |
 | 4 | Threat table | 11:30 to 12:15 | ☐ |
-|   | **Break + 2 emails** | 12:15 to 12:45 | ☐ |
+|   | **Break** | 12:15 to 12:45 | ☐ |
 | 5 | Lab evidence, screenshots | 12:45 to 13:15 | ☐ |
 | 6 | Assurance strategy | 13:15 to 13:50 | ☐ |
 | 7 | Justification | 13:50 to 14:50 | ☐ |
 | 8 | Final check, UPLOAD | 14:50 to 15:30 | ☐ |
 | 9 | Buffer, no new work | 15:30 to 16:00 | ☐ |
 
-Email at break start: ☐ ______  Email at break end: ☐ ______
+Break started: ______  Break ended: ______
 
 ## What earns what
 
@@ -43,7 +43,6 @@ Email at break start: ☐ ______  Email at break end: ☐ ______
 
 **Done when:** folders are ready and the hash is re-checked.
 
-| ☐ Write your real start time on page 1
 | ☐ Make folder `Ex2_Day2`: screenshots, outputs, notes
 | ☐ Copy in your bring-in files
 | ☐ Re-check the sample: `Get-FileHash -Algorithm SHA256 <file>`
@@ -117,9 +116,9 @@ Email at break start: ☐ ______  Email at break end: ☐ ______
 
 # Break (12:15 to 12:45)
 
-| ☐ Email your supervisor: break starting. Time: ______
+| ☐ Note the time the break starts: ______
 | ☐ Eat. Water. Walk. Look far away.
-| ☐ Email your supervisor: break ended. Time: ______
+| ☐ Note the time it ends: ______
 
 <div class="pb"></div>
 

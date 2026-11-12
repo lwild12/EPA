@@ -5,7 +5,7 @@ Today: finish the evidence, write the assurance strategy, write the justificatio
 
 **Rules from the v4 example pack. You confirmed the v4 pack applies, with the v11 brief for what must be attempted.**
 
-- Tests run **09:30 to 16:00**. Active time is 6 hours. Take **one 30-minute break** and **email your supervisor when it starts and when it ends**.
+- Tests run **09:30 to 16:00**. Active time is 6 hours. Take **one 30-minute break** (12:15 to 12:45). No supervisor emails needed: you are in a single room.
 - Open book, but it is an individual test. **No messaging anyone and no AI chat during test hours.** Everything you need is in this guide and your bring-in files.
 - Screenshots: **maximum 5 pages of A4**. Crop tightly.
 - Upload to **Blackboard**. Submission cannot be reloaded or amended.
@@ -46,7 +46,7 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 | 2 | Intel table | 60 | 09:45 to 10:45 |
 | 3 | Malware table | 45 | 10:45 to 11:30 |
 | 4 | Threat table | 45 | 11:30 to 12:15 |
-|   | **Break + 2 emails** | 30 | 12:15 to 12:45 |
+|   | **Break** | 30 | 12:15 to 12:45 |
 | 5 | Lab evidence and screenshots | 30 | 12:45 to 13:15 |
 | 6 | Assurance strategy | 35 | 13:15 to 13:50 |
 | 7 | Justification | 60 | 13:50 to 14:50 |
@@ -59,7 +59,6 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 
 **Done when:** folders are ready and the hash is re-checked.
 
-- ☐ Write your real start time on the pocket guide.
 - ☐ Make a folder `Ex2_Day2` with `screenshots`, `outputs`, `notes`.
 - ☐ Copy in the bring-in files.
 - ☐ Work out the sample hash again: `Get-FileHash -Algorithm SHA256 <file>`. Write the time and value in `notes`.
@@ -107,9 +106,9 @@ So: protect **Malware** and **Threats** first. Assurance and legal are pass only
 
 ## Break (12:15 to 12:45)
 
-- ☐ Email your supervisor: break starting. Write the time: ______
+- ☐ Note the time the break starts: ______
 - ☐ Eat. Drink water. Walk. Look at something far away.
-- ☐ Email your supervisor: break ended. Write the time: ______
+- ☐ Note the time it ends: ______
 
 ## 5. Lab evidence and screenshots (30 min)
 
