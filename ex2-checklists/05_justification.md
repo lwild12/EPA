@@ -6,8 +6,8 @@ Write this LAST, from your evidence log. Fill each part in 3 to 5 short sentence
 
 | Part | Words | Say |
 |---|---|---|
-| Context and scope | 100 | CareLink, what you tested, rules of engagement |
-| Malware (A) | 200 | Sample, hash, what it does, ATT&CK, what CareLink should do |
+| Context and scope | 100 | <company>, what you tested, rules of engagement |
+| Malware (A) | 200 | Sample, hash, what it does, ATT&CK, what <company> should do |
 | Threats and attacks (B) | 200 | Top threats, what you tested, what worked, fixes |
 | Assurance (C) | 150 | What is tested, how often, how findings are fixed |
 | Legal, ethics, evidence (D) | 200 | Scope and authorisation, CMA, UK GDPR, Information Commission, safe testing, evidence handling, audit record |

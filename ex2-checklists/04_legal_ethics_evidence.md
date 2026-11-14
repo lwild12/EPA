@@ -13,7 +13,7 @@ Fill in and keep as a half page:
 |---|---|
 | Who authorises the testing? | (you, as the learner, for your own lab; say so) |
 | What is in scope? | My Ex1 prototype app, my lab VMs, the malware sample in the VM, the M57-Jean image |
-| What is out of scope? | Any real CareLink or employer system, any live service, any other person's system |
+| What is out of scope? | Any real <company> or employer system, any live service, any other person's system |
 | Where is it done? | Isolated lab VM / local machine, no real personal data |
 | What is allowed? | Scans, injection tests, brute force against my own app only |
 | Backup / recovery | VM snapshots before each test; revert after |

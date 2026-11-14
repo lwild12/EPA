@@ -45,7 +45,7 @@ Write this on the first page of `notes/` (it is part of the legal and ethics top
 
 - ☐ Authorised by: me, for my own lab, for my own coursework.
 - ☐ In scope: my Ex1 prototype app, my lab VMs, one malware sample inside an isolated VM, the M57-Jean image.
-- ☐ Out of scope: any employer or CareLink system, any live site, anyone else's machine.
+- ☐ Out of scope: any employer or <company> system, any live site, anyone else's machine.
 - ☐ Safety: VM snapshots before each test, revert after. No real personal data.
 - ☐ Stop and escalate if anything touches something out of scope.
 
@@ -60,7 +60,7 @@ Write this on the first page of `notes/` (it is part of the legal and ethics top
 
 ## 2. A. Malware
 
-**Done when:** you have a verdict, ATT&CK techniques, IOCs, a detection rule, what CareLink should do, and (for Merit) obfuscation and anti-reverse-engineering analysis.
+**Done when:** you have a verdict, ATT&CK techniques, IOCs, a detection rule, what <company> should do, and (for Merit) obfuscation and anti-reverse-engineering analysis.
 
 Time inside A: A1 10, A2 30, A3 40, A4 10, A5 20, A6 10.
 
@@ -76,7 +76,7 @@ Time inside A: A1 10, A2 30, A3 40, A4 10, A5 20, A6 10.
   - Linux: `sha256sum sample.bin`
 - ☐ Write the SHA-256 in your evidence log. Screenshot it (`fig01`).
 - ☐ Search that hash on VirusTotal. **Do not upload the file.** Note the family name and the detection count. Screenshot (`fig02`).
-- ☐ In one line, say why this sample suits CareLink. Example: "Infostealers target saved credentials, like the sign-in details cached on 840 devices."
+- ☐ In one line, say why this sample suits <company>. Example: "Infostealers target saved credentials, like the sign-in details cached on 840 devices."
 
 ### A2. Static analysis
 
@@ -122,7 +122,7 @@ Plan before you click. Free sandbox time is short.
 - ☐ Write two lines: where they agree, and where they differ and why.
 - ☐ Mark each ATT&CK technique as **confirmed** (seen in sandbox) or **suspected** (only imports or strings).
 
-### A5. Verdict, detection and CareLink actions
+### A5. Verdict, detection and <company> actions
 
 - ☐ Verdict in one line: type (stealer, loader, RAT, ransomware), purpose, confidence.
 - ☐ How it gets in (phishing email, malicious download), how it runs, how it persists, how it talks out, how it hides. Use those five headings.
@@ -132,7 +132,7 @@ Plan before you click. Free sandbox time is short.
   3. Test it hits: `yara -s myrule.yar sample.bin`
   4. Test it misses a clean file: `yara myrule.yar C:\Windows\System32\notepad.exe` (Linux: `/bin/ls`)
   5. Screenshot both (`fig09`). Write what you changed.
-- ☐ Detection, containment, mitigation for CareLink. For each, link to something already in your Ex1 design:
+- ☐ Detection, containment, mitigation for <company>. For each, link to something already in your Ex1 design:
   - ☐ Block the IOCs (DNS, firewall)
   - ☐ EDR or Defender rule from your YARA
   - ☐ Short-lived tokens and MFA limit what a stolen credential can do
@@ -158,7 +158,7 @@ Stand up. Water. Eat something. Look away from the screen for a bit.
 
 ## 3. B1. Intel
 
-**Done when:** you have a short method, a sources list and 3 realistic threats for CareLink.
+**Done when:** you have a short method, a sources list and 3 realistic threats for <company>.
 
 - ☐ Write the method in four words: **collect, check reliability, analyse, share.**
 - ☐ List sources you would use and rate each A (reliable), B (usually), C (check it):
@@ -175,7 +175,7 @@ Stand up. Water. Eat something. Look away from the screen for a bit.
   3. Lost or stolen device holding cached visit notes.
 - ☐ For each: asset, how it happens, impact, which Ex1 control helps.
 - ☐ **Demonstrate collecting intelligence:** show 2 or 3 real searches on public sources (security news, researcher posts, vendor reports). Passive and lawful only: never join, post, buy or log in to a forum. For dark web activity, use published threat-intel reporting, do not visit.
-- ☐ **Enriched view (Pass):** combine at least two sources in one small table: threat | what NCSC says | what CISA KEV or ATT&CK says | what it means for CareLink.
+- ☐ **Enriched view (Pass):** combine at least two sources in one small table: threat | what NCSC says | what CISA KEV or ATT&CK says | what it means for <company>.
 - ☐ Screenshot or save one real source for each (a CISA entry, an ATT&CK page).
 
 ## 4. B2. Threat model

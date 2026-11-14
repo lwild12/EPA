@@ -1,7 +1,7 @@
 # Ex2: START HERE
 
 **Due: Friday 13 Nov 2026, 16:00.** Aim to upload by **14:30** so you have a buffer.
-Case study: still CareLink.
+Case study: still <company>.
 
 ## NEXT (edit this one line as you go)
 

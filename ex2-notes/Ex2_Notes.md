@@ -6,7 +6,7 @@ PE32 Executable .net assembly for MS windows
 
 SHA256 699ec052ecc898bdbdafea0027c4ab44c3d01ae011c17745dd2b7fbddaa077f3
 
-Infostealers like Agent Tesla target saved credentials, like the sign in details cached on the staff devices. These can present risk to CareLink as this can provide an attacker with direct credentials that are known good for the CareLink infrastructure
+Infostealers like Agent Tesla target saved credentials, like the sign in details cached on the staff devices. These can present risk to <company> as this can provide an attacker with direct credentials that are known good for the <company> infrastructure
 
 Infostealers are often delivered by mechanisms such as phishing emails, which rely on human interaction and susceptibility.
 
@@ -83,7 +83,7 @@ Tick each box as you go. Challenge points are my reading: check them against you
 - [ ] Detect: alert on workstations making outbound connections to unusual ports or mail servers.
 - [ ] Detect: write one YARA rule from ex2-malware/rules/generic_triage.yar and test it.
 - [ ] Contain: isolate the device, revoke tokens and credentials (already in your notes).
-- [ ] Mitigate: short-lived tokens, MFA, conditional access, small cache (already in your notes). Link each to a CareLink control from Ex1.
+- [ ] Mitigate: short-lived tokens, MFA, conditional access, small cache (already in your notes). Link each to a <company> control from Ex1.
 
 ### 6. Compare static and dynamic
 - [ ] Write two lines: where they agree (strings) and what each one missed.

@@ -38,7 +38,7 @@ Then write 2 lines: **what changed after enrichment** (e.g. "7 indicators became
 
 Label each row **Observed** (you saw it) or **Known** (from reporting).
 
-| Stage | Mechanism | Evidence (Fig) | ATT&CK ID | Detect / contain at CareLink |
+| Stage | Mechanism | Evidence (Fig) | ATT&CK ID | Detect / contain at <company> |
 | --- | --- | --- | --- | --- |
 | Access | **Known:** phishing attachment or malicious download. Not seen in the sandbox. | none; cite your source | T1566 (verify on attack.mitre.org) | Email gateway; awareness training; block risky file types |
 | Execution | **Observed:** .NET file started from `explorer.exe`; YARA strings show it targets saved passwords and cookies, plus a keyboard hook; spawned `shutdown -r -t 5` | Figs 1, 3, 4 | T1129, T1106, T1059 (Fig 7) | EDR alerts on unusual process trees; application control |

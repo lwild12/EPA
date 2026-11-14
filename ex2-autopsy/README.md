@@ -7,9 +7,9 @@ QA does not supply evidence, so you source your own. M57-Jean is the chosen publ
 - Background write-up (read AFTER your own analysis, and cite it if used):
   https://infosecinstitute.com/resources/digital-forensics/forensics-investigation-document-exfiltration-involving-spear-phishing-m57-jean-case/
 
-## Why it fits CareLink
+## Why it fits <company>
 
-The scenario is a confidential document leaving a company after a spear-phishing attack. That maps to the CareLink threat of confidential data leaving staff devices, and gives you an email trace (the PST / "trace the email" checklist item).
+The scenario is a confidential document leaving a company after a spear-phishing attack. That maps to the <company> threat of confidential data leaving staff devices, and gives you an email trace (the PST / "trace the email" checklist item).
 
 ## Check before you download (not verified)
 
@@ -24,7 +24,7 @@ The scenario is a confidential document leaving a company after a spear-phishing
 4. **Document the investigation** in Autopsy: data collection, analysis and mitigation measures.
 5. Also (legal topic): secure the evidence so it could support legal proceedings.
 
-For CareLink, treat M57-Jean as a breach of confidential data leaving the organisation.
+For <company>, treat M57-Jean as a breach of confidential data leaving the organisation.
 
 ## Steps (maps to the legal/ethical topic)
 

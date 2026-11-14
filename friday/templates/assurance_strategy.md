@@ -6,7 +6,7 @@
 
 ## 1. The system and what needs assuring (3 min)
 
-- System: CareLink's clinician devices, the sync API, and the cloud care management system (SaaS).
+- System: <company>'s clinician devices, the sync API, and the cloud care management system (SaaS).
 - Needs assuring: ____ (patient records; clinician devices; the sync API).
 
 ## 2. Security objectives (3 min)
@@ -35,7 +35,7 @@ Add one of your own: ____.
 
 ## 5. The four approaches (7 min)
 
-| Approach | What it is | Example for CareLink | When in the lifecycle |
+| Approach | What it is | Example for <company> | When in the lifecycle |
 | --- | --- | --- | --- |
 | Design and implementation | Building security in and testing it | ____ (threat-led design; security tests on the sync API) | Design, build |
 | Intrinsic | Assurance from inside the organisation | ____ (1) vulnerability scans and configuration reviews; ____ (2) code review before each release | Build, operate |

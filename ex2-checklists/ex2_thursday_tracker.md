@@ -36,7 +36,7 @@ Email sent at break start: ☐ ______   Email sent at break end: ☐ ______
 
 **1 Start (30)** ☐ folders ☐ brief read, verbs highlighted ☐ rules of engagement written ☐ VM snapshots `clean` ☐ app running, `test_sync.sh` 10 PASS ☐ Nessus activating ☐ sample downloaded in VM ☐ M57-Jean hashed
 
-**2 Malware (120)** ☐ A1 safe setup + SHA-256 ☐ A2 triage + strings ☐ decision point: obfuscated enough for Merit? ☐ A3 Any.run run + screenshots ☐ A4 static vs dynamic ☐ A5 verdict + YARA + CareLink actions ☐ **A6 MERIT: obfuscation / anti-RE** ☐ VM reverted
+**2 Malware (120)** ☐ A1 safe setup + SHA-256 ☐ A2 triage + strings ☐ decision point: obfuscated enough for Merit? ☐ A3 Any.run run + screenshots ☐ A4 static vs dynamic ☐ A5 verdict + YARA + <company> actions ☐ **A6 MERIT: obfuscation / anti-RE** ☐ VM reverted
 
 **3 to 5 Threats (90)** ☐ B1 method, sources, intel demo, enriched view, 3 threats ☐ B2 diagram + STRIDE with Intel column ☐ B3 nmap ☐ Nikto ☐ dirb ☐ Burp ☐ Nessus export
 
@@ -152,7 +152,7 @@ Email sent at break start: ☐ ______   Email sent at break end: ☐ ______
 
 **YARA:** hit on sample ☐   no hit on clean file ☐   What I changed: ____________________
 
-**CareLink actions**
+**<company> actions**
 
 ::: {.tall}
 
@@ -183,7 +183,7 @@ Email sent at break start: ☐ ______   Email sent at break end: ☐ ______
 
 ::: {.taller}
 
-| Threat | Source 1 says | Source 2 says | Meaning for CareLink |
+| Threat | Source 1 says | Source 2 says | Meaning for <company> |
 | --- | --- | --- | --- |
 | 1 | | | |
 | 2 | | | |
