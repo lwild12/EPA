@@ -15,6 +15,8 @@ alert tcp $HOME_NET any -> $EXTERNAL_NET 443 (msg:"EPA large outbound upload (po
 alert icmp $EXTERNAL_NET any -> $HOME_NET any (msg:"EPA ICMP echo sweep"; itype:8; detection_filter:track by_src, count 20, seconds 10; classtype:attempted-recon; sid:1000004; rev:1;)
 
 # 5. Cleartext credentials
+# Snort 2.9 form below. SNORT 3 needs the modifier inside content with a comma: content:"PASS ",nocase;  (a separate 'nocase;' gives: unknown rule keyword nocase)
+#   Fix for Snort 3:  sed -i 's/content:"PASS "; nocase;/content:"PASS ",nocase;/' /tmp/ex3.rules
 alert tcp any any -> $HOME_NET [21,23,110] (msg:"EPA cleartext login protocol"; flow:to_server,established; content:"PASS "; nocase; classtype:policy-violation; sid:1000005; rev:1;)
 
 # 6. FTP brute force: many new connections to port 21 (use when SSH is not available). UNTESTED against real Snort.
