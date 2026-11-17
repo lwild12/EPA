@@ -1,5 +1,7 @@
 # Ex3 guide: Tuesday (Day 1) and Wednesday (Day 2)
 
+> **WEDNESDAY? Open `ex3_WEDNESDAY_START_HERE.md` (short, ADHD-friendly).**
+>
 > **START HERE for the idiot-proof version: `ex3_MASTER_step_by_step_THIS_ONE.md` (one file, in order, every step).**
 >
 > **Need more detail?** Click-by-click versions with worked examples: `ex3_detail_tuesday.md` (A4 to C7) and `ex3_detail_wednesday.md` (D to H).
