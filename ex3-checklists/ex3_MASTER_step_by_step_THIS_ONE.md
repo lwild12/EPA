@@ -5,7 +5,27 @@ Follow it top to bottom. Do not skip. Do not read ahead.
 
 **If you get lost:** find the last figure number in your `evidence_log.txt`, then search this file for the next one.
 
-## Order of work
+## Wednesday time budget (fits 6 hours of active time)
+
+Active time is 09:30 to 16:00 minus a 30-minute break = 6 hours. This plan uses about 4 h 50 of work and leaves about 70 minutes spare. If a section overruns, take the time from the spare, not the next section.
+
+| Time | Task | Minutes |
+| --- | --- | --- |
+| 09:30 to 09:40 | Open files, check figures | 10 |
+| 09:40 to 10:15 | C: Snort write-up, correlation table, C1, C5 to C7 | 35 |
+| 10:15 to 10:30 | A6 | 15 |
+| 10:30 to 10:50 | B3 to B7 | 20 |
+| 10:50 to 12:05 | D (only section with Merit and Distinction) | 75 |
+| 12:05 to 12:35 | Break (email supervisor at start and end) | 30 |
+| 12:35 to 13:05 | E | 30 |
+| 13:05 to 13:30 | F | 25 |
+| 13:30 to 14:00 | G (short tabletop) | 30 |
+| 14:00 to 14:40 | H justification | 40 |
+| 14:40 to 14:50 | Upload, open it to check | 10 |
+
+If short of time, cut in this order: shorten C5 to C7, shorten A6, skip the second Snort fix. Protect D.
+
+## Order of work (original estimate, longer than the budget above)
 
 | When | Part | Steps | Time |
 | --- | --- | --- | --- |
