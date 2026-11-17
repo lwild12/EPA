@@ -1,5 +1,8 @@
 # Ex3 guide: Tuesday (Day 1) and Wednesday (Day 2)
 
+> **Need more detail?** Click-by-click versions with worked examples: `ex3_detail_tuesday.md` (A4 to C7) and `ex3_detail_wednesday.md` (D to H).
+
+
 One small step at a time. Do the step, tick it, move on. Do not read ahead.
 
 **Tuesday (Day 1), hands-on:** A. Data and statistics, B. Recon, C. Monitoring and detection.
