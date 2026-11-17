@@ -16,3 +16,6 @@ alert icmp $EXTERNAL_NET any -> $HOME_NET any (msg:"EPA ICMP echo sweep"; itype:
 
 # 5. Cleartext credentials
 alert tcp any any -> $HOME_NET [21,23,110] (msg:"EPA cleartext login protocol"; flow:to_server,established; content:"PASS "; nocase; classtype:policy-violation; sid:1000005; rev:1;)
+
+# 6. FTP brute force: many new connections to port 21 (use when SSH is not available). UNTESTED against real Snort.
+alert tcp any any -> $HOME_NET 21 (msg:"EPA possible FTP brute force"; flags:S; detection_filter:track by_src, count 10, seconds 60; classtype:attempted-admin; sid:1000006; rev:1;)

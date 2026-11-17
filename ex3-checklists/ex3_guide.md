@@ -158,6 +158,7 @@ print(con.execute("SELECT src, COUNT(*) FROM auth_events GROUP BY src ORDER BY 2
 ```
 
 - ☐ If it loads 0 rows, open `auth.log`, copy one failed-login line, and adjust the pattern. Say you did.
+- ☐ **If SSH was refused and you used FTP:** copy `/var/log/vsftpd.log` instead and run `python load_ftp.py <db> vsftpd.log` (script in `ex3-monitor/`). It fills the same `auth_events` table, so the join below works unchanged. If it loads 0 rows, look at one real line with `grep -i -m3 fail vsftpd.log` and adjust the pattern. Fallback: Wireshark filter `ftp.response.code==530` shows failed logins in the pcap itself. Note in your write-up that SSH was refused and why.
 - ☐ **Join the two sources** in DB Browser and screenshot (`fig04b`):
 
 ```sql
@@ -268,7 +269,7 @@ Time: 45 minutes. **Passive and lawful only.**
 - ☐ <company> is fictional. Say: "I used my own domain as a stand-in for the method, and applied the same questions to <company>'s published details in the brief (technologies, cloud provider, suppliers, device types)."
 - ☐ Collect, passive only. Log each command and screenshot a few (`fig12`, `fig13`):
   - ☐ `whois <domain>`
-  - ☐ `dig <domain> ANY +noall +answer` and `dig <domain> MX +short`, `dig <domain> TXT +short` (mail setup, SPF, DMARC)
+  - ☐ `dig <domain> A +short`, then the same for `AAAA`, `NS`, `MX`, `TXT` (mail setup, SPF, DMARC), `SOA` and `CAA`. **Do not rely on `ANY`: many servers refuse it (RFC 8482).** Note in your log that ANY returned nothing
   - ☐ Certificate transparency: open `https://crt.sh/?q=<domain>` in the browser. It lists subdomains.
   - ☐ `curl -sI https://<domain>` (headers show server and technology)
   - ☐ Public documentation, job adverts and vendor pages for technologies named in the brief
@@ -325,6 +326,7 @@ sed -i 's/\$HOME_NET/<MSF>/g; s/\$EXTERNAL_NET/<KALI>/g' /tmp/ex3.rules
   - Snort 3: `snort -c /etc/snort/snort.lua -R /tmp/ex3.rules -r ex3_own.pcap -A alert_fast -q`
   - Snort 2: add the rules to your `local.rules` and run `sudo snort -T -c /etc/snort/snort.conf` first, then `sudo snort -c /etc/snort/snort.conf -r ex3_own.pcap -A console -q`
 - ☐ Expect alerts for: port scan (rule 1), SSH brute force (rule 2), maybe the ICMP sweep (rule 4) if you pinged fast. **Rule 3 (large outbound upload) will not fire in your lab**, because there is no external host. Say so.
+- ☐ **If you used FTP, not SSH:** rule 2 is SSH only. Rule 6 in `local.rules` covers FTP. Rule 5 should also fire (cleartext `PASS`), probably once per attempt, so count the alerts. Note that FTP sends credentials unencrypted.
 - ☐ If a rule has a syntax error, fix it and say what you changed. Screenshot the alerts (`fig15`).
 - ☐ **Tune one rule.** Change a threshold, rerun, say what changed and why.
 - ☐ If Snort will not run at all: show the error, then use your SQL queries 3 and 5 as the detection logic, and say that plainly.
@@ -347,7 +349,7 @@ sed -i 's/\$HOME_NET/<MSF>/g; s/\$EXTERNAL_NET/<KALI>/g' /tmp/ex3.rules
 | hh:mm:ss | Auth log | Many failed SSH logins from the same IP | Brute force after the scan |
 
 - ☐ Write the **cause** from the observables: "recon, then credential attack". Say which evidence supports it and what would change your mind.
-- ☐ **Compare with known threat and vulnerability data (Pass item).** Map the events to MITRE ATT&CK: scan = Network Service Discovery (T1046), brute force = Brute Force (T1110). Look up the services nmap found on Metasploitable and one CVE for an old version. Write: does the evidence show a breach? Say yes, no or unsure, and why.
+- ☐ **Compare with known threat and vulnerability data (Pass item).** Map the events to MITRE ATT&CK: scan = Network Service Discovery (T1046), brute force = Brute Force (T1110). Look up the services nmap found on Metasploitable and one CVE for an old version. If nmap shows vsftpd 2.3.4, CVE-2011-2523 (a backdoor in that version) is a good one to cite. Cite it only; do not exploit it. Write: does the evidence show a breach? Say yes, no or unsure, and why.
 - ☐ **Characterise the impact** if the target were a <company> server: what data, who is affected, how bad (use your risk scale).
 - ☐ **Physical security and access-control logs:** you have none in the lab. Say so, and say what you would add.
 - ☐ Save as `fig17`.
@@ -619,4 +621,4 @@ Time: 60 minutes.
 - **Hydra or nmap will not run:** use your Kali tools list from the brief. Say what you ran and what you did not.
 - **Snort will not run:** show the error, use SQL queries 3 and 5 as the detection logic, say so plainly.
 - **Query returns nothing:** lower the threshold or say "none seen". Do not invent results.
-- **Metasploitable will not accept SSH:** use FTP or telnet for the normal and brute-force traffic. Say why.
+- **Metasploitable will not accept SSH:** use FTP or telnet for the normal and brute-force traffic. Say why. For FTP: `hydra -l msfadmin -P /tmp/words.txt -t 4 ftp://<MSF>`, then load the log with `load_ftp.py`.
