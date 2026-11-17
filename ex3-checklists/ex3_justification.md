@@ -9,7 +9,7 @@ Write this LAST, from your evidence log. Fill each part in 3 to 5 short sentence
 | 1. Context and scope | 100 | <company>, what you monitored, rules of engagement, authorisation |
 | 2. Data and statistics | 150 | Data sets, baseline, methods, findings, big-data weaknesses |
 | 3. Reconnaissance | 100 | Scope, public sources, confirmed vs assumed, attack paths |
-| 4. Risk model and external standard | 200 | Register, scoring, trade-offs, the standard chosen, gaps |
+| 4. Risk model and external standard | 200 | Register, the **two methods compared**, investment options, the standard chosen, gaps |
 | 5. Management system | 120 | ISMS approach, objectives, measures, review |
 | 6. Monitoring and detection | 150 | Data sources, rules, correlation, alert handling |
 | 7. Incident response | 130 | Phases, roles, third parties, notification, exercise result |
@@ -24,7 +24,7 @@ Write this LAST, from your evidence log. Fill each part in 3 to 5 short sentence
 
 **3. Reconnaissance.** "I scoped recon to [domain], passive sources only. I found [confirmed item] (confirmed) and [assumption] (needs validation). This suggests [attack path] (fig). I rejected [active scanning] because it was not authorised."
 
-**4. Risk model and external standard.** "I scored [N] risks on a [1-5] scale (fig). The top risk is [R1] scored [x]. I compared [option A] and [option B] and chose [A] because [evidence and trade-off]. I assessed to [ISO/IEC 27005 or NIST SP 800-30] because [reason] and rejected [other] because [reason]. Gaps: [control gap]. Residual risk: [what remains]."
+**4. Risk model and external standard.** "I scored [N] risks on a [1-5] scale (fig). The top risk is [R1] scored [x]. I used STRIDE and CVSS and compared them: [STRIDE added risk X to the register; CVSS moved risk Y up or down] (fig). I compared [option A] and [option B] and ranked [A] first as an investment because [evidence, cost and value for money]. I assessed to [ISO/IEC 27005 or NIST SP 800-30] because [reason] and rejected [other] because [reason]. Gaps: [control gap]. Residual risk: [what remains]."
 
 **5. Management system.** "I based the plan on ISO/IEC 27001 plan, do, check, act. Objectives include [measure and target, marked as proposals]. They are reviewed [how often] and changes in [threat, technology, regulation] trigger reassessment (fig)."
 

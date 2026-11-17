@@ -11,7 +11,7 @@ One small step at a time. Do the step, tick it, move on. Do not read ahead.
 - Tests run **09:30 to 16:00**. Active time is 6 hours. Take **one 30-minute break** and **email your supervisor when it starts and when it ends**.
 - If screenshots are requested: **maximum 5 pages of A4**. Crop tightly.
 - **Submission is final and cannot be reloaded or amended.**
-- Merit and Distinction rows for Ex3 are in your printed v4 grade tables. I have not seen them, so none are invented here. Copy them into the blank table in `ex3_brief_checklist.md`.
+- **What Merit needs (v4 Annex 1, Ex3):** every Pass criterion, plus Merit and Distinction on **risk modelling only** (technical competency 15 and knowledge 15). Every other Ex3 row is Pass only. So every **MERIT** and **DISTINCTION** step below is in section D. The full table is in `ex3_brief_checklist.md`.
 
 **If you feel stuck:**
 
@@ -39,6 +39,8 @@ The brief says to consider Kaggle or Hugging Face for the large data set. The pi
 **What I have not checked:** the Kaggle and Hugging Face copies (file names, column names, size), and whether the QA machine can reach them. Test this first thing.
 
 **Pick one day.** Tuesday has SSH brute force, which matches your own capture story. Friday has a port scan if you prefer.
+
+**Wording check:** the v4 pack says to collect traffic "from the network devices you designed above" (your Ex1 network). The v11 brief suggests external data such as Kaggle. Check which your live Ex3 brief says. State your choice and why in the write-up (Packet Tracer traffic is simulated, not real).
 
 ## 1. Start of day (Tuesday)
 
@@ -70,6 +72,7 @@ The brief says to consider Kaggle or Hugging Face for the large data set. The pi
 - ☐ Put both VMs on the **same host-only or internal network**. Note both IPs: `<KALI>` and `<MSF>`.
 - ☐ Check Python on Windows: `python -c "import scapy, pandas, sklearn, matplotlib, tabulate; print('ok')"`
   - If it fails: `pip install scapy pandas numpy scikit-learn matplotlib tabulate`
+- ☐ In Kali run `snort -V` and `hydra -h | head -2`. If either is missing: `sudo apt update && sudo apt install snort hydra` (package names may differ).
 - ☐ Copy the `ex3-monitor` folder into `Ex3_Day1`.
 - ☐ Open Wireshark and DB Browser for SQLite once, to check they start.
 - ☐ **Test the download now:** open Kaggle and Hugging Face. Can you reach them? Do you need an account? If blocked, note it and use the fallback in section 0.
@@ -132,6 +135,44 @@ GROUP BY src ORDER BY packets DESC;
 ```
 
 - ☐ Run the same query for the attack window. Compare the two. That is your baseline.
+
+### A3b. Design the database (a Pass item: design and set up a database of relevant information)
+
+Pass also asks for **heterogeneous** data. You have three kinds: packet data, labelled flows, and login logs.
+
+- ☐ Draw a small table diagram (paper is fine): `packets` (packet data), `flows` (per-connection summary, built from packets), `flows_ids` (CIC-IDS2017 flows, added in A5), `auth_events` (login log). The link between tables is the source IP.
+- ☐ Copy the target's login log to Windows. On Metasploitable it is `/var/log/auth.log` (or `/var/log/messages` if there is no auth.log). Save it as `auth.log` next to `traffic.db`.
+- ☐ Save this as `load_auth.py` and run it:
+
+```python
+import re, sqlite3
+pat = re.compile(r"^(\w{3}\s+\d+\s[\d:]+)\s\S+\s(\S+?)\[\d+\]: Failed password for (?:invalid user )?(\S+) from (\S+)")
+con = sqlite3.connect("traffic.db")
+con.execute("DROP TABLE IF EXISTS auth_events")
+con.execute("CREATE TABLE auth_events (logtime TEXT, service TEXT, username TEXT, src TEXT)")
+rows = [m.groups() for m in map(pat.match, open("auth.log", errors="ignore")) if m]
+con.executemany("INSERT INTO auth_events VALUES (?,?,?,?)", rows)
+con.commit()
+print(len(rows), "failed logins loaded")
+print(con.execute("SELECT src, COUNT(*) FROM auth_events GROUP BY src ORDER BY 2 DESC").fetchall())
+```
+
+- ☐ If it loads 0 rows, open `auth.log`, copy one failed-login line, and adjust the pattern. Say you did.
+- ☐ **Join the two sources** in DB Browser and screenshot (`fig04b`):
+
+```sql
+SELECT a.src, a.n AS failed_logins, p.ports AS distinct_ports
+FROM (SELECT src, COUNT(*) AS n FROM auth_events GROUP BY src) a
+JOIN (SELECT src, COUNT(DISTINCT dport) AS ports FROM packets GROUP BY src) p ON a.src = p.src;
+```
+
+- ☐ **Graph theory (knowledge item).** Treat hosts as nodes and conversations as edges. A scanner has a high out-degree:
+
+```sql
+SELECT src, COUNT(DISTINCT dst) AS out_degree FROM packets GROUP BY src ORDER BY out_degree DESC;
+```
+
+- ☐ In a two-VM lab every source has one neighbour, so the graph is trivial. Say so. The synthetic practice data shows it better, if you use it.
 
 ### A4. Statistics on your capture
 
@@ -208,6 +249,8 @@ FROM flows_ids GROUP BY Label ORDER BY flows DESC;
 | Deployment | Default credentials, exposed dashboard, unpatched components, no backups | C, I, A | Hardening baseline, patching, backups, network restriction |
 | Monitoring itself | An attacker deletes or poisons logs, so you go blind | I, A | Write-once storage, off-box copy, alert on log gaps |
 
+- ☐ Write two lines: one benefit and one limitation of big-data approaches (scale and speed, against cost, data quality and privacy).
+- ☐ Name one real architecture (for example a Hadoop-style cluster: ingest, distributed storage, batch processing) and say where your weaknesses apply to it.
 - ☐ Pick the two most serious. Say how each would affect your ability to detect an attack.
 - ☐ Screenshot or photograph the diagram and table (`fig11`).
 
@@ -238,6 +281,10 @@ Time: 45 minutes. **Passive and lawful only.**
 | Example: it probably uses product X | Header guess | Assumption |
 | Example: staff reuse passwords | None | Needs validation |
 
+- ☐ **Contradictory sources (Pass item).** Find at least one place where two sources disagree (for example a header suggests one server and a certificate or DNS record suggests another). Say which you trust more and why.
+- ☐ **Provenance.** For each source write who produced it, when, and how much you trust it (A, B or C). Say how that changes your conclusion.
+- ☐ **Profile the target** in 5 lines: what it is, what it runs, who runs it, where it is exposed. List potential weaknesses, found legally.
+- ☐ **Threat actor behaviour (knowledge item):** one line each on how port scanning, open-source intelligence and an insider would appear in your sources. Your Wireshark scan is the example for scanning.
 - ☐ List technologies, services, dependencies and third parties (cloud, mobile device management, email provider, suppliers).
 - ☐ Write **three attack paths** your findings suggest. For each: entry point, what the finding enables, what would need validating.
 - ☐ Write one line: "Everything above was authorised, proportionate and from public sources."
@@ -287,6 +334,7 @@ sed -i 's/\$HOME_NET/<MSF>/g; s/\$EXTERNAL_NET/<KALI>/g' /tmp/ex3.rules
 - ☐ Filter `tcp.flags.syn==1 && tcp.flags.ack==0` : the scan. Screenshot (`fig16`).
 - ☐ Filter `tcp.port==22` : the brute-force sessions.
 - ☐ Filter `http` : the Nikto requests.
+- ☐ **Inspect packet structure (Pass item).** Click one SYN packet and expand the TCP layer in the details pane. Note the flags and window size. Do the same for one SSH packet (the protocol banner) and one HTTP request (the user-agent may show Nikto). Write one line each on what is abnormal.
 
 ### C4. Correlate (what a SIEM does)
 
@@ -299,6 +347,9 @@ sed -i 's/\$HOME_NET/<MSF>/g; s/\$EXTERNAL_NET/<KALI>/g' /tmp/ex3.rules
 | hh:mm:ss | Auth log | Many failed SSH logins from the same IP | Brute force after the scan |
 
 - ☐ Write the **cause** from the observables: "recon, then credential attack". Say which evidence supports it and what would change your mind.
+- ☐ **Compare with known threat and vulnerability data (Pass item).** Map the events to MITRE ATT&CK: scan = Network Service Discovery (T1046), brute force = Brute Force (T1110). Look up the services nmap found on Metasploitable and one CVE for an old version. Write: does the evidence show a breach? Say yes, no or unsure, and why.
+- ☐ **Characterise the impact** if the target were a <company> server: what data, who is affected, how bad (use your risk scale).
+- ☐ **Physical security and access-control logs:** you have none in the lab. Say so, and say what you would add.
 - ☐ Save as `fig17`.
 
 ### C5. Real incident or benign?
@@ -321,6 +372,18 @@ sed -i 's/\$HOME_NET/<MSF>/g; s/\$EXTERNAL_NET/<KALI>/g' /tmp/ex3.rules
 
 - ☐ Say how alerts are **recorded** (ticket), **escalated** (P1 to the incident lead), and used to **tune** rules (review false positives monthly).
 
+### C7. Know the trade-offs (knowledge item)
+
+| Approach | Good at | Weak at |
+| --- | --- | --- |
+| Signature-based (Snort rules) | Known attacks, few false alarms | New or slow attacks |
+| Algorithmic (z-score, KMeans) | Unusual behaviour never seen before | False alarms, needs a good baseline |
+| Manual review | Context and judgement | Slow, does not scale |
+| Automated tools | Speed and scale | Miss context, need tuning |
+
+- ☐ One line: how statistics support incident analysis (baseline, outlier, timeline).
+- ☐ Name a SIEM you would use (for example Wazuh, Splunk or Microsoft Sentinel) and what it would add. **Say you did not run one.**
+
 ## 5. End of Tuesday
 
 - ☐ Evidence log: every figure has a number, a file name, what it shows and where you will use it.
@@ -341,32 +404,94 @@ Open these templates in `templates/`: `risk_register.md`, `security_policy_and_i
 
 ## 6. D. Risk modelling, analysis and trade-offs (brief topic 3)
 
-**Done when:** every Day 1 finding is a row in a risk register, with a treatment and a residual risk.
+**This is the only Ex3 topic with Merit and Distinction. Give it the most time.**
 
-Time: 45 minutes.
+**Done when:** a risk register, two modelling methods compared (Merit), and costed investment options (Distinction).
 
-- ☐ List **assets**: patient notes database, API tokens, staff devices, monitoring data (`traffic.db`), the sync service.
+Time: 75 minutes.
+
+### D1. Assets and register (Pass)
+
+- ☐ List **assets** with a value: patient notes database, API tokens, staff devices, monitoring data (`traffic.db`), the sync service. Use High, Medium or Low, or a cost figure. Say it is an assumption.
 - ☐ Turn each Day 1 finding into a row:
 
-| ID | Threat | Vulnerability (your evidence) | Asset | L (1-5) | I (1-5) | Score | Treatment | Residual |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| R1 | Port scan then SSH brute force | No rate limit; 61 SSH attempts in query 5 *(use your number)* | Sync server | 4 | 4 | 16 | Rate limit, key-only SSH, alert | 6 |
+| ID | Threat | Vulnerability (your evidence) | Asset | Class | Owner | L (1-5) | I (1-5) | Score | Treatment | Residual |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| R1 | Port scan then SSH brute force | No rate limit; failed logins in `auth_events` *(use your number)* | Sync server | Cyber, operational | IT lead | 4 | 4 | 16 | Rate limit, key-only SSH, alert | 6 |
 
-- ☐ **One scale for everything.** Write the scale (1 = rare / minor, 5 = almost certain / severe). Score = L x I. Say what counts as High (for example 15 or more).
-- ☐ **Relationships.** Draw or write: Threat exploits Vulnerability, which exposes Asset, which causes Impact.
-- ☐ **Qualitative and quantitative.** Add one quantitative row with the formula: SLE = asset value x exposure factor, ALE = SLE x ARO (annual rate of occurrence). Use clearly marked **assumed** values.
-- ☐ **Assumptions and limitations** (3 lines): scores are judgement, lab data is small, impact values are assumed.
-- ☐ **Trade-offs.** For your top two risks, compare 2 or 3 treatments:
+- ☐ **Class:** relate each cyber risk to other classes (business, operational, legal, reputational). The Pass criteria ask for this.
+- ☐ **Owner:** the risk owner is the person who accepts the risk and funds the fix. Say how that differs from the analyst or the user.
+- ☐ **One scale for everything.** Write the scale (1 = rare or minor, 5 = almost certain or severe). Score = L x I. Say what counts as High (for example 15 or more).
+- ☐ **Risk appetite and tolerance:** one sentence each. Appetite is how much risk <company> will take for its aims. Tolerance is the limit it will not go past.
+- ☐ **Qualitative and quantitative.** Add one quantitative row: SLE = asset value x exposure factor, ALE = SLE x ARO (annual rate of occurrence). Use clearly marked **assumed** values.
+- ☐ **Treatment options** for each significant risk: mitigate, transfer (insurance, supplier), accept or avoid. Say which and why.
+- ☐ **Assumptions and limitations** (3 lines).
 
-| Option | Security gain | Cost | Usability | Performance | Availability | Choice |
-| --- | --- | --- | --- | --- | --- | --- |
-| Rate limiting | Medium | Low | Low impact | Low | Low risk of lockout | Chosen |
-| MFA on admin access | High | Medium | Some friction | None | None | Chosen |
-| Network IPS inline | High | High | None | Adds latency | Risk of false blocks | Rejected for now |
+### D2. Method 1: STRIDE (Pass)
 
+- ☐ Draw a data-flow diagram of your **monitoring system**: sensor or capture, collector, database, analysis, analyst. Mark trust boundaries.
+- ☐ Fill a STRIDE table for it (reuse the format of your Ex2 STRIDE table, or `templates/stride_threat_model.md`):
+
+| S/T/R/I/D/E | Threat to the monitoring system | Existing control | Gap |
+| --- | --- | --- | --- |
+| T | Attacker edits `traffic.db` or logs | File permissions | No integrity check |
+
+- ☐ Mark the top three. Screenshot (`fig19`).
+
+### D3. Method 2: CVSS scoring (Merit)
+
+Merit needs **two** methods from SABSA, DBSy, CVSS scoring, STRIDE or NIST 800-154. You have STRIDE. Add CVSS.
+
+- ☐ Pick 3 vulnerabilities from your lab: a service found by nmap on Metasploitable, a Nikto finding, or the SSH weakness.
+- ☐ Score each with a CVSS calculator (FIRST publishes one online). **Write which version you used** (3.1 or 4.0).
+- ☐ Record the base score, the severity rating and the vector string for each.
+- ☐ Screenshot one calculator result (`fig19b`).
+
+### D4. Compare and contrast (Merit)
+
+- ☐ Fill this table in your own words:
+
+| | STRIDE | CVSS |
+| --- | --- | --- |
+| What it models | Threats to a system design, by category | Severity of one known vulnerability |
+| Input needed | A diagram and its data flows | A specific vulnerability |
+| Output | List of threats, no numbers | A score from 0 to 10 |
+| Strength | Finds threats you did not know about | Gives a fast, repeatable ranking |
+| Weakness | No built-in ranking, depends on the modeller | Ignores business impact and your own controls |
+
+- ☐ Write 3 lines on **the effect on the later risk analysis**: STRIDE changes *which risks are in the register*. CVSS changes *how a technical risk is ranked*. Say which risk moved up or down when you used both, with an example from your register.
+
+### D5. Business case and costs (Pass)
+
+- ☐ For your top two risks, compare 2 or 3 treatments:
+
+| Option | Security gain | One-off cost | Annual cost | Usability | Performance | Availability | Choice |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Rate limiting | Medium | Low | Low | Low impact | Low | Low risk of lockout | Chosen |
+| MFA on admin access | High | Medium | Medium | Some friction | None | None | Chosen |
+| Inline network IPS | High | High | High | None | Adds latency | Risk of false blocks | Rejected for now |
+
+- ☐ Mark every cost as an **assumption**.
+- ☐ Give a **value-for-money** judgement: for each chosen option, say what the risk reduction is worth against its cost (for example ALE before and after).
 - ☐ Justify each choice with evidence (figure number).
-- ☐ **Residual risk:** list the risks still above your acceptable level, and what extra monitoring or management action covers them.
-- ☐ Save as `fig18` (register) and `fig19` (matrix).
+
+### D6. Enterprise model (Pass)
+
+- ☐ Draw one **UML-style component or deployment diagram** of the monitoring system (sensor, collector, database, analysis, alerts). Add the link to the rest of <company>: the Ex1 network and the sync service.
+- ☐ Label each box with the assets and risk IDs from your register. This is the "architectural model for risk assessment, integrated with the enterprise model".
+- ☐ Screenshot (`fig19c`).
+
+### D7. Investment options (Distinction)
+
+- ☐ Use the STRIDE and CVSS results together to rank 3 to 4 **investment options**:
+
+| Rank | Investment | Risks reduced (IDs) | Cost | Risk reduction (score before, after) | Why this rank |
+| --- | --- | --- | --- | --- | --- |
+| 1 | | | | | |
+
+- ☐ Say how the two methods **changed** the ranking. Distinction needs the options to come from the comparison.
+- ☐ **Residual risk:** list the risks still above your tolerance, and what extra monitoring or management action covers them.
+- ☐ Save the register as `fig18`.
 
 ## 7. E. Risk assessment to an external standard (brief topic 4)
 
@@ -374,7 +499,7 @@ Time: 45 minutes.
 
 Time: 60 minutes.
 
-- ☐ **Choose the standard.** I suggest **ISO/IEC 27005:2022** (information security risk management). It pairs with ISO/IEC 27001, which you use in F. **Alternative:** NIST SP 800-30 Rev. 1. Say why you chose yours and what you rejected.
+- ☐ **Choose the standard.** I suggest **ISO/IEC 27005:2022** (information security risk management). It pairs with ISO/IEC 27001, which you use in F. **Alternative:** NIST SP 800-30 Rev. 1. Say why you chose yours and what you rejected. The v4 brief names NIST CSF, ISO/IEC 27001 and CIS Controls as examples of an external standard. Whichever you pick, **map your risks to that standard's controls** so you are assessing against it.
 - ☐ **I cannot access the paid standard text.** Use the stage names from your own notes or course material. Do not quote clauses from memory. Check that your headings match your copy.
 - ☐ Work through these stages in order, one short section each:
 
@@ -390,6 +515,7 @@ Time: 60 minutes.
 | Monitoring and review | When it is reassessed, what triggers a reassessment |
 
 - ☐ **Map risks to controls.** Use ISO/IEC 27001:2022 Annex A control themes (organisational, people, physical, technological). Mark any risk with **no control** as a gap.
+- ☐ **Existing controls and effectiveness (v4 brief):** list the controls already in place (from your Ex1 design). Say how well each works (effective, partly, not) with evidence. Propose remediation in the context of <company>.
 - ☐ **Record it systematically:** one table, one row per risk, with source figure. This is your evidence that you followed the standard.
 - ☐ Document **limitations and areas needing more work** (3 lines).
 - ☐ Check the brief for regulators relevant to the case (health and social care data, UK GDPR). Link risks to them in one line.
@@ -416,6 +542,9 @@ Time: 45 minutes.
 - ☐ **Plan sections:** risk treatment, access management, monitoring, incident management, training, continual improvement. One short paragraph each.
 - ☐ **How it is measured and reviewed:** monthly metrics, quarterly management review, annual internal audit.
 - ☐ **Change feedback:** new threats, new technology, new regulation, or an incident triggers a reassessment of the risk register and the plan.
+- ☐ **Prioritise and plan (v4 brief):** rank each recommendation by impact and feasibility. Give each a timeline, an owner and the resources needed.
+- ☐ **Targets and service levels:** name at least one service level or performance target the plan must meet (for example time to patch, time to respond).
+- ☐ **Governance (knowledge item):** one short paragraph on how policies, standards and guidelines fit together, and how provisioning and access control support them.
 - ☐ Save as `fig21`.
 
 ## Break
@@ -460,6 +589,9 @@ Time: 60 minutes.
 | T+60 | Regulator clock started | Decide on notification | Senior owner | |
 
 - ☐ **Improvements** from the "Gap found" column. Write at least three, one about third parties.
+- ☐ **Evidence preservation (knowledge item):** list what you collect first (volatile data, logs, disk image), keep a chain-of-custody record, hash everything, and work on copies.
+- ☐ **Write the escalation message** to the external team in 4 lines: what happened, when, what you have done, what you need. Put it in your notes. This evidences communicating with a third party.
+- ☐ **Non-major incident (Pass item):** say which severity you handle locally, and which defined procedure you followed in the exercise.
 - ☐ Save as `fig22` (plan) and `fig23` (exercise).
 
 ## 10. H. Justification (brief final topic)
