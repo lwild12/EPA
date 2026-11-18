@@ -22,3 +22,10 @@ Valgrind does not run on Windows. If the machine is Windows without WSL, say so 
 3. `safe_copy.asm` is the defensive one: bounds check, always terminate, return a truncation flag.
 
 You can also run the programs without MARS: `python3 mips_mini.py sum_array.asm`. It only supports a subset, so confirm in the real tool.
+
+## Scripts and the two-day guide
+
+- `EX4_START_HERE.md` is the full step-by-step guide for Thursday and Friday. Start there.
+- `sync-validator/` is Script A: a request validator with 28 tests (run `python -m pytest -v` inside it).
+- `alert-triage/` is Script B: an alert de-duplication and ranking algorithm with 16 tests and a timing script.
+- Starter code was drafted with AI assistance. Reference that in the write-up, and review, test and rewrite in your own words.
