@@ -46,10 +46,7 @@ Behind? Cut in this order: T9 extra test, T15 extra test, T8 Ex1 link. **Never c
 cd C:\path\to\EPA\ex4-defensive
 ```
 
-☐ Get the latest files. See `Already up to date` or new files:
-```
-git pull
-```
+☐ Check the files are there. Type `dir`. See `sync-validator` and `alert-triage` in the list.
 
 ☐ Check Python. See `Python 3.x`. If it errors, try `py --version` and use `py` for every command today:
 ```
@@ -400,4 +397,3 @@ git push
 | Tests fail at T4 | You edited a file by accident: `git checkout -- .` |
 | No failure at T5 | You didn't save. Ctrl+S, re-run |
 | `bandit` not found | `python -m bandit -r sync_validator.py` |
-| `git pull` complains | `git stash`, `git pull`, `git stash pop` |

@@ -100,11 +100,7 @@ Do T1 now if you can. Then stop.
   ```
   cd C:\path\to\EPA\ex4-defensive
   ```
-- [ ] Get the latest files:
-  ```
-  git pull
-  ```
-  You should see `Already up to date` or a list of new files.
+- [ ] Check the files are there. Type `dir` and press Enter. You should see `sync-validator` and `alert-triage` in the list.
 - [ ] Check Python works:
   ```
   python --version
@@ -459,7 +455,6 @@ Open `alert_triage.py` in Notepad.
 - [ ] Open Command Prompt. Run:
   ```
   cd C:\path\to\EPA\ex4-defensive
-  git pull
   ```
 - [ ] Open `ex4-evidence\log.txt` in Notepad. Check Thursday's work is all there.
 - [ ] Open the v11 brief and the printed v4 pack.
@@ -608,7 +603,6 @@ Eat. Leave the screen.
 | T5 shows no failure after changing to `match` | You did not save the file. Save it (Ctrl+S) and re-run. |
 | `bandit` is not recognised | Use `python -m bandit -r sync_validator.py` |
 | Your timing numbers differ from the guide | Normal. Use your own. |
-| `git pull` complains about local changes | Run `git stash`, then `git pull`, then `git stash pop`. |
 | Word count too high or low | See F8. |
 | Panicking | Stand up. Water. Say the next step aloud. |
 
