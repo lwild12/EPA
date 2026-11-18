@@ -21,8 +21,8 @@ Open this file and nothing else. Do one box. Tick it. Next box.
 
 ## Rules to remember (check them against your live brief)
 
-- Open book. Individual test. Follow the rules your assessor gave you on AI use.
-- Starter code in this folder was drafted with AI. **Reference that** the way your assessor said. You run it, test it, debug it, review it, and write the justification in **your own words from your own evidence**.
+- Open book. Individual test. **No AI during test hours.** AI is for preparing beforehand only. Prepared material may be brought in.
+- Starter code in this folder was drafted with AI. It was prepared before the test. **Reference that** the way your assessor said. You run it, test it, debug it, review it, and write the justification in **your own words from your own evidence**.
 - Screenshots: crop tightly. Check the page limit in your live brief.
 - Break rules differ between exercises. Check your live brief for what to do about the break.
 - Submission to Blackboard is final. You cannot change it after.
@@ -242,7 +242,7 @@ You must be able to explain this code. Open `sync_validator.py` in Notepad and r
 | `validate`, step 5 | IDs may only use safe characters. Notes may not contain control characters like a null byte. |
 | `validate`, step 6 | Final date check. |
 
-- [ ] For each row, write **one sentence in your own words** in the log under `SCRIPT A: MY UNDERSTANDING`. If you can't, ask me in the chat.
+- [ ] For each row, write **one sentence in your own words** in the log under `SCRIPT A: MY UNDERSTANDING`. If you can't, re-read that part of the code and the table above, and write what you do understand. Mark the rest `TO DO` and come back to it.
 
 ## T8 Test table and link to Ex1 (15 min)
 
@@ -529,10 +529,10 @@ These are already in your repo. They show 9 common security flaws, each with the
 
 **Target 1,000 words. Allowed 900 to 1,100.** About 200 words per section.
 
-Your method (agreed with your assessor): get a draft, then rewrite it in your own words from your own evidence.
+Your method (agreed with your assessor): a draft prepared **before** the test, rewritten in your own words from your own evidence. No AI during test hours.
 
-- [ ] In the chat, ask: "Draft section 1 and 2 of my Ex4 justification using this log" and paste the relevant parts of your log. Do **not** paste it straight into the document.
-- [ ] Read the draft. Then **rewrite it** using your own words and your own numbers.
+- [ ] Open your prepared draft or outline of the justification (made before the test). If you have none, write from the starter sentences below.
+- [ ] Fill every blank from your own log: your numbers, your bug, your tests. Then **rewrite** each sentence in your own words.
 
 **Section 1: Why these two components (about 150 words).** Link to the case study risks. Say why Python (readable, strong libraries, quick to test). Starter sentence:
 > "The case study lists [risk 1], [risk 2] and alert fatigue. I chose to build [Script A] because ... and [Script B] because ..."
@@ -556,7 +556,7 @@ Eat. Leave the screen.
 > "These scripts are prototypes. I did not test ... Next I would ..."
 
 - [ ] Add the AI reference line at the end of the justification:
-  > "AI assistance (Claude) was used to draft starter code and initial text. I ran, tested, debugged and reviewed all code, and rewrote this text from my own evidence."
+  > "AI assistance (Claude) was used before the test to prepare starter code and an outline. During the test I ran, tested, debugged and reviewed all code, and wrote this text from my own evidence."
 
 ## F8 Word count and tidy (15 min)
 
@@ -613,4 +613,4 @@ Eat. Leave the screen.
 3. **Why a dictionary in Script B?** One lookup per alert, so it scales. Comparing every pair would be n squared.
 4. **What stops an alert flood using all the memory?** The open group cap closes the oldest group, and only the top 100 incidents are kept.
 5. **What did these tests not cover?** Real network attacks, real data, and integration with the live API. They are unit tests.
-6. **How did you use AI?** Starter code and draft text. I ran and tested everything, added my own tests, and rewrote the text from my own evidence.
+6. **How did you use AI?** Starter code and an outline, prepared before the test. I ran and tested everything, added my own tests, and rewrote the text from my own evidence.
