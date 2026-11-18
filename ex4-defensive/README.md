@@ -26,6 +26,7 @@ You can also run the programs without MARS: `python3 mips_mini.py sum_array.asm`
 ## Scripts and the two-day guide
 
 - `EX4_START_HERE.md` is the full step-by-step guide for Thursday and Friday. Start there.
+- `EX4_THURSDAY_pocketjet.pdf` is the Thursday-only tick-list for the PocketJet (source: `EX4_THURSDAY_pocketjet.md`).
 - `sync-validator/` is Script A: a request validator with 28 tests (run `python -m pytest -v` inside it).
 - `alert-triage/` is Script B: an alert de-duplication and ranking algorithm with 16 tests and a timing script.
 - Starter code was drafted with AI assistance. Reference that in the write-up, and review, test and rewrite in your own words.
