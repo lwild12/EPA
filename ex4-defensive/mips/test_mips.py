@@ -30,6 +30,11 @@ def test_safe_copy_truncates_and_does_not_overflow():
     assert out == "copied: AAAAAAA\ntruncated: 1\nguard: OK\n"
 
 
+def test_size_check_rejects_both_ends_of_range():
+    assert run("size_check.asm") == ("-1 REJECT\n0 REJECT\n1 ACCEPT\n65536 ACCEPT\n"
+                                    "65537 REJECT\n2147483647 REJECT\n")
+
+
 @pytest.mark.parametrize("name", [f for f in os.listdir(HERE) if f.endswith(".asm")])
 def test_every_program_terminates(name):
     assert isinstance(run(name), str)

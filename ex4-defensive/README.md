@@ -26,6 +26,7 @@ You can also run the programs without MARS: `python3 mips_mini.py sum_array.asm`
 ## Scripts and the two-day guide
 
 - `EX4_START_HERE.md` is the full step-by-step guide for Thursday and Friday. Start there.
-- `sync-validator/` is Script A: a request validator with 28 tests (run `python -m pytest -v` inside it).
+- `sync-validator/` is Script A: a request validator (31 tests), a fuzzer (`fuzz_validator.py`), and a command-line script (`validate_file.py`, 6 tests). Run `python -m pytest -v test_sync_validator.py` inside it.
 - `alert-triage/` is Script B: an alert de-duplication and ranking algorithm with 16 tests and a timing script.
-- Starter code was drafted with AI assistance. Reference that in the write-up, and review, test and rewrite in your own words.
+- `mips/size_check.asm` is a low-level (assembler) version of Script A's size check.
+- Starter code and notes were prepared with AI assistance before the test. Reference that in the write-up, and review, test and rewrite in your own words.

@@ -28,6 +28,15 @@ class ValidationError(Exception):
     """Carries only a field name, never the user's input (no data leakage)."""
 
 
+def _is_utf8_safe(text):
+    """A lone surrogate (for example the JSON escape \\ud800) cannot be stored as UTF-8."""
+    try:
+        text.encode("utf-8")
+    except UnicodeEncodeError:
+        return False
+    return True
+
+
 def _no_duplicate_keys(pairs):
     seen = {}
     for key, value in pairs:
@@ -61,7 +70,7 @@ def validate(raw_body, now=None):
     # 2. parse JSON strictly
     try:
         data = json.loads(raw_body.decode("utf-8"), object_pairs_hook=_no_duplicate_keys)
-    except (UnicodeDecodeError, ValueError):
+    except (UnicodeDecodeError, ValueError, RecursionError):   # deep nesting raises RecursionError
         raise ValidationError("invalid_json")
 
     # 3. must be an object with exactly the expected fields
@@ -76,7 +85,7 @@ def validate(raw_body, now=None):
     # 4. type and length of each field
     for name, max_len in FIELDS.items():
         value = data[name]
-        if not isinstance(value, str) or not value.strip() or len(value) > max_len:
+        if not isinstance(value, str) or not value.strip() or len(value) > max_len or not _is_utf8_safe(value):
             raise ValidationError(name)
 
     # 5. patterns

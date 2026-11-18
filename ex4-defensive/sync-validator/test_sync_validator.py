@@ -149,6 +149,19 @@ def test_security_invalid_utf8():
     rejects(b"\xff\xfe\x00bad", "invalid_json")
 
 
+def test_security_lone_surrogate_in_note():
+    # JSON escape that decodes to a character UTF-8 cannot store: would crash at storage time
+    rejects(good(note_text="a\ud800b"), "note_text")
+
+
+def test_security_deeply_nested_json_does_not_crash():
+    rejects(b"[" * 30000 + b"]" * 30000, "invalid_json")
+
+
+def test_security_deeply_nested_value_does_not_crash():
+    rejects(b'{"client_id":' + b"[" * 30000 + b"]" * 30000 + b"}", "invalid_json")
+
+
 def test_security_error_never_echoes_input():
     with pytest.raises(ValidationError) as err:
         validate(good(patient_ref="SECRET'; DROP TABLE notes;--"), now=NOW)
