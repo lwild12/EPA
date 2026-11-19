@@ -192,6 +192,8 @@ The starter code already has three fixes. Each one closes a real, subtle defect.
 
 **Method for each defect:** edit, save, run, screenshot, restore, run again.
 
+**Faster alternative (also valid):** remove all three fixes together, run the tests and screenshot the failures (expect 4 failed: D1 one, D2 one, D3 two). Then restore one fix, run, screenshot. Restore the next, run, screenshot. Restore the third, run, and confirm all pass. Describe whichever method you actually used.
+
 **Restore tip:** if you lose track, run `git checkout -- sync_validator.py` to reset the file.
 
 ### D1: trailing newline in an ID (10 min)
@@ -229,9 +231,11 @@ A JSON escape like `\ud800` becomes a lone surrogate. It looks like text but can
     ```
     DEFECTS FOUND, FIXED AND RETESTED
     How: these three defects were found while preparing the code (with AI
-    assistance) and fixed in the starter code. During the test I reproduced each
-    one by removing its fix, confirmed the tests catch it, restored the fix and
-    retested. Final result: 31 passed.
+    assistance) and fixed in the starter code. During the test I removed the
+    fixes, confirmed the tests catch them, restored the fixes and retested after
+    each one. Final result: 31 passed.
+    (Edit this to match what you actually did: all at once then one at a time,
+    or one defect at a time.)
 
     D1 Trailing newline accepted in IDs (CWE-20)
        Why subtle: the pattern looks right; "$" matches before a final newline.
@@ -436,7 +440,8 @@ The v4 table wants algorithm analysis, strategies, data structures, complexity a
     COMPLEXITY
     Time: O(n log n) for the sort, plus O(n) grouping, plus O(g log 100) for the
     heap, where g is the number of groups (g <= n). Overall O(n log n).
-    Memory: O(MAX_OPEN_GROUPS + TOP_N), fixed, however many alerts arrive.
+    Working memory beyond the input list: O(MAX_OPEN_GROUPS + TOP_N), fixed however
+    many alerts arrive. (The list of valid alerts itself grows with the input.)
 
     DISCRETE MATHS
     Sets and relations: "same (source, type, asset)" is an equivalence relation
@@ -470,7 +475,7 @@ The v4 table wants algorithm analysis, strategies, data structures, complexity a
                   is two; severity 1 and 5 accepted
     Error (4)     severity 0 and 9; missing field; NaN and text times; non-dict items
     Security (4)  severity as string; boolean severity; 1 MB asset name; a flood of
-                  20,000 unique alerts stays under 60 MB, returns only 50 incidents
+                  20,000 unique alerts stays under 60 MB, returns only 50 incidents (the test asks for top_n=50)
     ```
 
 ## T15 Understand Script B (20 min)
@@ -502,10 +507,12 @@ The v4 table wants algorithm analysis, strategies, data structures, complexity a
     10,000 alerts    [yours] s
     100,000 alerts   [yours] s
     100 times more alerts took roughly [ratio] times longer. That is close to
-    n log n, not n squared (which would be 10,000 times longer).
+    near-linear, nowhere near n squared (which would be 10,000 times longer).
     Improvements: skip the sort if alerts already arrive in time order; use a
     rolling window so one attack is not split at the 10 minute edge. Both keep
     the validation and the memory cap, so the security properties are unchanged.
+    Limitation: closing the oldest group at the cap means a flood can force a real
+    incident to close early and split in two.
     ```
 
 ## T17 Two tests of your own (15 min)
@@ -830,7 +837,7 @@ Eat. Leave the screen.
 
 Your method (agreed with your assessor): a draft prepared **before** the test, rewritten in your own words from your own evidence. No AI during test hours.
 
-- [ ] Open your prepared draft or outline (made before the test). If you have none, write from the starter sentences below.
+- [ ] Open your prepared draft or outline (made before the test). A prepared draft is in `justification_draft.md` in this folder: read its "Fix these in your log" list first. If you have none, write from the starter sentences below.
 - [ ] Fill every blank from your own log: your numbers, your defects, your tests. Then **rewrite** each sentence in your own words.
 
 | Section | Words | What goes in it |
