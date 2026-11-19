@@ -17,15 +17,15 @@ How to use it (F9, 90 minutes):
 - [ ] **Flood test.** The flood test asks for the top 50 (`top_n=50`) while the default is 100. Say so in one line, so "50" does not look like a mistake.
 - [ ] **Flood limitation.** Closing the oldest group at the cap protects memory, but a flood can force a real incident to close early and split into two. Say this as the limitation.
 - [ ] **Criticality values.** Check the numbers in your log match `CRITICALITY` in `alert_triage.py`.
-- [ ] **Provenance.** The defects were reproduced by removing each fix from starter code. Do not write that you "found" them by initial testing or "wrote" the code.
+- [ ] **Provenance.** The defects were reproduced by removing the fixes from starter code. Do not write that you "found" them by initial testing or "wrote" the code. Write the order you actually followed (for example: all fixes removed together, then restored one at a time with a retest after each).
 - [ ] **Typos in the log.** Check field names (`created_at`), "deeply", and each test name.
 
 ## Claims to check before you rely on them
 
 | Claim in the draft | Where to check |
 | --- | --- |
-| 31 tests pass for Script A, 16 for Script B, 6 for the command-line script | Screenshots A1, B1, A9 |
-| Removing each fix fails 1, 1 and 2 tests (4 in total) | Screenshots A2, A3, A4 |
+| Script A: 31 starter tests plus [your own] pass. Script B: 16 plus [your own] pass. Command-line script: 6 | Screenshots A1, B1, A9 and your own-test screenshots |
+| With all fixes removed, 4 tests failed; restoring them one at a time, with a retest each time, ended with all passing | Your screenshots of each run |
 | Bandit: no issues | Screenshot A6 |
 | Fuzzer: 20,000 requests, 0 failures; fails with the D2 fix removed | Screenshots A7, A8 |
 | Also ran 1,000,000 fuzz requests | Only if you really did; otherwise delete |
@@ -46,19 +46,19 @@ The case study lists weak API authentication, insecure sync, cached records and 
 
 ### 2. Script A and the three language levels
 
-Script A rejects everything not explicitly allowed. Its specification, recorded in my log before I ran the tests, limits IDs to 64 safe characters, notes to 20,000 characters, dates to at most 30 days old and 5 minutes ahead, and the body to 64 KB; extra fields and duplicate keys are rejected. The starter code was prepared with AI assistance. I ran its 31 tests (normal, boundary, error and security) and reviewed each one.
+Script A rejects everything not explicitly allowed. Its specification, recorded in my log before I ran the tests, limits IDs to 64 safe characters, notes to 20,000 characters, dates to at most 30 days old and 5 minutes ahead, and the body to 64 KB; extra fields and duplicate keys are rejected. The starter code was prepared with AI assistance. I ran its 31 tests (normal, boundary, error and security), reviewed each one and added [CONFIRM: three] of my own.
 
 I then used a short command-line script, which returns exit code 0, 1 or 2, so the check can run in automation. The same size rule exists at three levels: Python source, Python bytecode, and MIPS assembler. In Python, `0 < n <= 65536` is one comparison node with two operators, compiled to two compares and jumps. In MIPS it is a function that rejects by default: one branch rejects zero or negative values and another rejects values over the limit. I predicted that lowering the limit to 1000 would change the result from Accept, Reject, Reject to Reject, Reject, Reject, and the run matched [CONFIRM].
 
 ### 3. Secure programming
 
-I reproduced three subtle defects by removing each fix from the starter code and watching the tests fail. A trailing newline in an ID passed because `$` matches before a final newline (CWE-20), which could split log lines. A lone surrogate in a note is valid JSON but cannot be stored as UTF-8, so storing it would crash (CWE-176). Deeply nested JSON fits inside the size limit but exhausts the parser (CWE-674); two tests caught that, so four failed in total. I restored each fix and retested: all 31 passed.
+I reproduced three subtle defects by removing their fixes from the starter code and watching the tests fail. A trailing newline in an ID passed because `$` matches before a final newline (CWE-20), which could split log lines. A lone surrogate in a note is valid JSON but cannot be stored as UTF-8, so storing it would crash (CWE-176). Deeply nested JSON fits inside the size limit but exhausts the parser (CWE-674); two tests caught that, so four failed in total. I restored the fixes one at a time, retesting after each, until every test passed.
 
 Bandit found no issues. A fuzzer sent 20,000 mutated requests and checks two rules: the validator only returns a result or raises its error, and anything accepted is safe. With the UTF-8 fix removed, it reported failures; with the fix restored, it reported none. I applied allow-listing, fail-closed handling, resource limits and errors that never echo input, drawing on OWASP and CERT guidance. Together these form a validation gateway: one function every request passes through, returning a clean new dictionary and never the raw input, so a bad device cannot reach the database. As a formal method I described CSP: it proves properties over every behaviour of a model, but it proves the model and not the code. [CONFIRM: add one compiler or interpreter feature you ran in F5.]
 
 ### 4. Script B and the algorithm
 
-Alert fatigue could bury real incidents, so Script B groups duplicate alerts and ranks the rest. Inputs are source, type, asset, severity and time; the output is the top 100 incidents and a count of rejected alerts. Alerts with the same source, type and asset within ten minutes of a group's first alert form one group. The score is severity multiplied by asset criticality multiplied by log(count + 1) [CONFIRM: criticality values match the code]. I assumed timestamps are trusted.
+Alert fatigue could bury real incidents, so Script B groups duplicate alerts and ranks the rest. Inputs are source, type, asset, severity and time; the output is the top 100 incidents and a count of rejected alerts. Alerts with the same source, type and asset within ten minutes of a group's first alert form one group. The score is severity multiplied by asset criticality multiplied by log(count + 1) (criticality: care records 5, sync-api 4, laptop 3, mobile 2, anything else 1). I assumed timestamps are trusted. Its 16 starter tests and [CONFIRM: two] of my own pass, including a flood of 20,000 unique alerts under 60 MB.
 
 I compared two approaches. Comparing every pair of alerts is O(n squared), so an attacker could slow detection by flooding. A dictionary keyed by group gives one lookup per alert, but unique alerts could use up memory, so the oldest open group is closed at a cap and a heap keeps only the best incidents. Sorting dominates at O(n log n). Working memory beyond the input is fixed. My timings were [CONFIRM: 0.002, 0.014 and 0.138 seconds for 1,000, 10,000 and 100,000 alerts]: 100 times more alerts took about [CONFIRM: 69] times longer, near-linear and nowhere near n squared. The same-key relation is an equivalence relation, so it partitions the alerts. After processing k alerts, each valid alert is in exactly one group. The limitation is that a flood can force an early close and split a real incident; a rolling window would help.
 
