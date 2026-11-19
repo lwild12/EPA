@@ -192,6 +192,8 @@ The starter code already has three fixes. Each one closes a real, subtle defect.
 
 **Method for each defect:** edit, save, run, screenshot, restore, run again.
 
+**Faster alternative (also valid):** remove all three fixes together, run the tests and screenshot the failures (expect 4 failed: D1 one, D2 one, D3 two). Then restore one fix, run, screenshot. Restore the next, run, screenshot. Restore the third, run, and confirm all pass. Describe whichever method you actually used.
+
 **Restore tip:** if you lose track, run `git checkout -- sync_validator.py` to reset the file.
 
 ### D1: trailing newline in an ID (10 min)
@@ -229,9 +231,11 @@ A JSON escape like `\ud800` becomes a lone surrogate. It looks like text but can
     ```
     DEFECTS FOUND, FIXED AND RETESTED
     How: these three defects were found while preparing the code (with AI
-    assistance) and fixed in the starter code. During the test I reproduced each
-    one by removing its fix, confirmed the tests catch it, restored the fix and
-    retested. Final result: 31 passed.
+    assistance) and fixed in the starter code. During the test I removed the
+    fixes, confirmed the tests catch them, restored the fixes and retested after
+    each one. Final result: 31 passed.
+    (Edit this to match what you actually did: all at once then one at a time,
+    or one defect at a time.)
 
     D1 Trailing newline accepted in IDs (CWE-20)
        Why subtle: the pattern looks right; "$" matches before a final newline.
